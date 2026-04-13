@@ -33,7 +33,7 @@
           "settings": {
             "heading": "How does the ball move on its own?",
             "icon": "question_mark",
-            "row_content": "<p>The Pawly Ball uses built-in motion sensors and a smart motor to roll, bounce, and change direction randomly — creating lifelike, unpredictable movement. When it hits a wall or furniture, it automatically changes course. It also has a rest mode: 30 minutes of active play, followed by 30 minutes of rest, mimicking natural energy cycles.</p>",
+            "row_content": "<p>The Pawly Ball has a built-in intelligent motion sensor and automatic obstacle avoidance system. It spins, rolls, and shakes unpredictably — and when it hits a wall or furniture, it reverses itself and moves away. It has 3 modes: fast, slow, and interactive. In interactive mode, it activates when your cat touches it and rests when they stop. Double-click the button to switch modes.</p>",
             "page": ""
           }
         },
@@ -42,7 +42,7 @@
           "settings": {
             "heading": "Is it safe for my cat?",
             "icon": "heart",
-            "row_content": "<p>Absolutely. The Pawly Ball is made from non-toxic, bite-resistant materials with no small detachable parts. The outer shell is smooth and durable, designed to withstand even the most enthusiastic hunters. The feather tail attachment is securely fixed and tested for safety.</p>",
+            "row_content": "<p>Absolutely. The Pawly Ball is made from PC and food-grade silicone — soft, skin-friendly, and bite-resistant. No small detachable parts. It's CE, FCC, and RoHS certified, meeting European and US safety standards.</p>",
             "page": ""
           }
         },
@@ -51,7 +51,7 @@
           "settings": {
             "heading": "How long does the battery last?",
             "icon": "lightning_bolt",
-            "row_content": "<p>A full charge via USB-C provides approximately 4-6 hours of active play (including rest cycles). Charging takes about 1-2 hours. No disposable batteries needed — better for the environment and your wallet.</p>",
+            "row_content": "<p>A full charge takes only 20 minutes via USB-C and provides up to 6 hours of play. No disposable batteries needed — better for the environment and your wallet.</p>",
             "page": ""
           }
         },
@@ -60,7 +60,7 @@
           "settings": {
             "heading": "Does it work on carpet?",
             "icon": "question_mark",
-            "row_content": "<p>Yes! The Pawly Ball works on all floor types — hardwood, tile, laminate, and most carpets. On very thick or shaggy carpets, the movement may be slightly reduced, but the ball is designed to handle normal household surfaces without issues.</p>",
+            "row_content": "<p>Yes! The wave-textured silicone surface is specifically designed to roll smoothly on all floor types — hardwood, tile, laminate, and carpet. The texture actually makes the movement more unpredictable on carpet, which keeps cats even more engaged.</p>",
             "page": ""
           }
         },

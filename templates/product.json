@@ -53,7 +53,7 @@
           "settings": {
             "heading": "What's included",
             "icon": "box",
-            "content": "<p>1x Pawly Interactive Ball<br>1x USB-C charging cable<br>1x Feather tail attachment<br>1x Quick start guide</p>",
+            "content": "<p>1x Pawly Interactive Ball<br>1x USB-C charging cable</p>",
             "page": ""
           }
         },
@@ -62,7 +62,7 @@
           "settings": {
             "heading": "How it works",
             "icon": "play_circle",
-            "content": "<p>Simply turn on the Pawly Ball and place it on the floor. Built-in motion sensors create unpredictable, lifelike movement that mimics natural prey. The ball automatically changes direction when it hits obstacles, keeping your cat engaged for hours. It also features a smart rest mode — 30 minutes of play, 30 minutes of rest — to match your cat's natural energy cycles.</p>",
+            "content": "<p>Long-press the button to turn on. The Pawly Ball has 3 modes:<br><br><strong>Fast mode</strong> — high-speed rolling for energetic cats<br><strong>Slow mode</strong> — gentle movement for curious kittens<br><strong>Interactive mode</strong> — activates on touch, rests when your cat does<br><br>Double-click the button to switch between modes. Built-in motion sensors detect obstacles and automatically reverse direction. The wave-textured silicone surface creates unpredictable movement on any floor type.</p>",
             "page": ""
           }
         },
