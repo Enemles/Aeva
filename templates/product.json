@@ -89,6 +89,13 @@
             "page": ""
           }
         },
+        "inventory": {
+          "type": "inventory",
+          "settings": {
+            "inventory_threshold": 10,
+            "show_inventory_quantity": true
+          }
+        },
         "share": {
           "type": "share",
           "settings": {
@@ -101,6 +108,7 @@
         "judge_me_reviews_preview_badge_g6jg88",
         "caption",
         "price",
+        "inventory",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
@@ -113,7 +121,7 @@
       ],
       "settings": {
         "enable_sticky_info": true,
-        "color_scheme": "",
+        "color_scheme": "scheme-1",
         "media_size": "large",
         "constrain_to_viewport": true,
         "media_fit": "contain",
@@ -158,7 +166,7 @@
         "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "left",
-        "section_color_scheme": "",
+        "section_color_scheme": "scheme-1",
         "color_scheme": "scheme-2",
         "padding_top": 40,
         "padding_bottom": 40
