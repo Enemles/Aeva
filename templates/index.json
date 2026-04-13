@@ -188,31 +188,54 @@
       }
     },
     "social_proof": {
-      "type": "rich-text",
+      "type": "multicolumn",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "review_1": {
+          "type": "column",
           "settings": {
-            "heading": "What cat parents are saying",
-            "heading_size": "h2"
+            "title": "⭐⭐⭐⭐⭐",
+            "text": "<p>\"My cat literally won't stop chasing it. I finally don't feel guilty leaving for work.\"</p><p><strong>— Sarah K.</strong><br><em>London, UK</em></p>",
+            "link_label": "",
+            "link": ""
           }
         },
-        "text": {
-          "type": "text",
+        "review_2": {
+          "type": "column",
           "settings": {
-            "text": "<p>⭐⭐⭐⭐⭐ \"My cat literally won't stop chasing it. I finally don't feel guilty leaving for work.\" — <em>Sarah K., London</em></p><p>⭐⭐⭐⭐⭐ \"Bought two for my cats. Best purchase I've made this year. They play with it every single day.\" — <em>Emma L., Amsterdam</em></p><p>⭐⭐⭐⭐⭐ \"My lazy indoor cat is finally getting exercise. Absolute game changer.\" — <em>Lisa M., Stockholm</em></p>"
+            "title": "⭐⭐⭐⭐⭐",
+            "text": "<p>\"Bought two for my cats. Best purchase I've made this year. They play with it every single day.\"</p><p><strong>— Emma L.</strong><br><em>Amsterdam, NL</em></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "review_3": {
+          "type": "column",
+          "settings": {
+            "title": "⭐⭐⭐⭐⭐",
+            "text": "<p>\"My lazy indoor cat is finally getting exercise. Absolute game changer.\"</p><p><strong>— Lisa M.</strong><br><em>Stockholm, SE</em></p>",
+            "link_label": "",
+            "link": ""
           }
         }
       },
       "block_order": [
-        "heading",
-        "text"
+        "review_1",
+        "review_2",
+        "review_3"
       ],
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
+        "title": "What cat parents are saying",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "primary",
         "color_scheme": "scheme-2",
-        "full_width": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
         "padding_top": 48,
         "padding_bottom": 48
       }
