@@ -1,0 +1,125 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "faq_content": {
+      "type": "collapsible-content",
+      "blocks": {
+        "faq-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Will my cat actually play with this?",
+            "icon": "paw_print",
+            "row_content": "<p>Most cats are immediately attracted to the Pawly Ball's unpredictable movement — it mimics the erratic motion of small prey, which triggers their natural hunting instincts. Some cats engage right away, while others may need 2-3 sessions to warm up. We offer a 30-day guarantee, so if your cat truly isn't interested, you're fully covered.</p>",
+            "page": ""
+          }
+        },
+        "faq-2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How does the ball move on its own?",
+            "icon": "question_mark",
+            "row_content": "<p>The Pawly Ball uses built-in motion sensors and a smart motor to roll, bounce, and change direction randomly — creating lifelike, unpredictable movement. When it hits a wall or furniture, it automatically changes course. It also has a rest mode: 30 minutes of active play, followed by 30 minutes of rest, mimicking natural energy cycles.</p>",
+            "page": ""
+          }
+        },
+        "faq-3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is it safe for my cat?",
+            "icon": "heart",
+            "row_content": "<p>Absolutely. The Pawly Ball is made from non-toxic, bite-resistant materials with no small detachable parts. The outer shell is smooth and durable, designed to withstand even the most enthusiastic hunters. The feather tail attachment is securely fixed and tested for safety.</p>",
+            "page": ""
+          }
+        },
+        "faq-4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How long does the battery last?",
+            "icon": "lightning_bolt",
+            "row_content": "<p>A full charge via USB-C provides approximately 4-6 hours of active play (including rest cycles). Charging takes about 1-2 hours. No disposable batteries needed — better for the environment and your wallet.</p>",
+            "page": ""
+          }
+        },
+        "faq-5": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Does it work on carpet?",
+            "icon": "question_mark",
+            "row_content": "<p>Yes! The Pawly Ball works on all floor types — hardwood, tile, laminate, and most carpets. On very thick or shaggy carpets, the movement may be slightly reduced, but the ball is designed to handle normal household surfaces without issues.</p>",
+            "page": ""
+          }
+        },
+        "faq-6": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How loud is it?",
+            "icon": "question_mark",
+            "row_content": "<p>Very quiet. The motor produces a soft hum that's barely noticeable — perfect for apartments and smaller spaces. Most cats are actually more attracted to quiet toys, as loud noises can be intimidating.</p>",
+            "page": ""
+          }
+        },
+        "faq-7": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What if my cat doesn't like it?",
+            "icon": "return",
+            "row_content": "<p>We offer a full 30-day money-back guarantee. If your cat doesn't enjoy the Pawly Ball, simply contact us and we'll process your refund — no questions asked. We want both you and your cat to be happy.</p>",
+            "page": ""
+          }
+        },
+        "faq-8": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Where does it ship from and how long does delivery take?",
+            "icon": "truck",
+            "row_content": "<p>Orders are shipped from our fulfilment partner within 1-3 business days. Estimated delivery is 6-12 business days to the UK, Germany, Netherlands, and Scandinavia. You'll receive a tracking number via email once your order is dispatched.</p>",
+            "page": ""
+          }
+        },
+        "faq-9": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do you ship to my country?",
+            "icon": "globe",
+            "row_content": "<p>We currently ship to the United Kingdom, Germany, the Netherlands, Sweden, Denmark, Norway, and Finland. We're working on expanding to more European countries soon. If your country isn't listed, feel free to contact us and we'll see what we can do.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "faq-1",
+        "faq-2",
+        "faq-3",
+        "faq-4",
+        "faq-5",
+        "faq-6",
+        "faq-7",
+        "faq-8",
+        "faq-9"
+      ],
+      "settings": {
+        "caption": "FAQ",
+        "heading": "Got questions? We've got answers.",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "section",
+        "color_scheme": "scheme-1",
+        "container_color_scheme": "scheme-2",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "padding_top": 24,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "faq_content"
+  ]
+}

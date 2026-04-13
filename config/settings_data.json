@@ -6,71 +6,71 @@
       "color_schemes": {
         "scheme-1": {
           "settings": {
-            "background": "#FFFFFF",
+            "background": "#FAF7F2",
             "background_gradient": "",
-            "text": "#121212",
-            "button": "#121212",
+            "text": "#3D2E1E",
+            "button": "#B87333",
             "button_label": "#FFFFFF",
-            "secondary_button_label": "#121212",
-            "shadow": "#121212"
+            "secondary_button_label": "#3D2E1E",
+            "shadow": "#3D2E1E"
           }
         },
         "scheme-2": {
           "settings": {
-            "background": "#F3F3F3",
+            "background": "#F0EAE0",
             "background_gradient": "",
-            "text": "#121212",
-            "button": "#121212",
-            "button_label": "#F3F3F3",
-            "secondary_button_label": "#121212",
-            "shadow": "#121212"
+            "text": "#3D2E1E",
+            "button": "#B87333",
+            "button_label": "#FFFFFF",
+            "secondary_button_label": "#3D2E1E",
+            "shadow": "#3D2E1E"
           }
         },
         "scheme-3": {
           "settings": {
-            "background": "#242833",
+            "background": "#3D2E1E",
             "background_gradient": "",
-            "text": "#FFFFFF",
-            "button": "#FFFFFF",
-            "button_label": "#000000",
-            "secondary_button_label": "#FFFFFF",
-            "shadow": "#121212"
+            "text": "#FAF7F2",
+            "button": "#C4956A",
+            "button_label": "#3D2E1E",
+            "secondary_button_label": "#FAF7F2",
+            "shadow": "#2A1F14"
           }
         },
         "scheme-4": {
           "settings": {
-            "background": "#121212",
+            "background": "#2A1F14",
             "background_gradient": "",
-            "text": "#FFFFFF",
-            "button": "#FFFFFF",
-            "button_label": "#121212",
-            "secondary_button_label": "#FFFFFF",
-            "shadow": "#121212"
+            "text": "#FAF7F2",
+            "button": "#C4956A",
+            "button_label": "#2A1F14",
+            "secondary_button_label": "#FAF7F2",
+            "shadow": "#2A1F14"
           }
         },
         "scheme-5": {
           "settings": {
-            "background": "#334FB4",
+            "background": "#B87333",
             "background_gradient": "",
             "text": "#FFFFFF",
             "button": "#FFFFFF",
-            "button_label": "#334FB4",
+            "button_label": "#B87333",
             "secondary_button_label": "#FFFFFF",
-            "shadow": "#121212"
+            "shadow": "#8B5A2B"
           }
         }
       },
-      "type_header_font": "assistant_n4",
-      "heading_scale": 100,
+      "type_header_font": "playfair_display_n4",
+      "heading_scale": 110,
       "type_body_font": "assistant_n4",
-      "body_scale": 100,
+      "body_scale": 105,
       "page_width": 1200,
-      "spacing_sections": 0,
-      "spacing_grid_horizontal": 8,
-      "spacing_grid_vertical": 8,
-      "buttons_border_thickness": 1,
-      "buttons_border_opacity": 100,
-      "buttons_radius": 0,
+      "spacing_sections": 36,
+      "spacing_grid_horizontal": 12,
+      "spacing_grid_vertical": 12,
+      "buttons_border_thickness": 0,
+      "buttons_border_opacity": 0,
+      "buttons_radius": 20,
       "buttons_shadow_opacity": 0,
       "buttons_shadow_horizontal_offset": 0,
       "buttons_shadow_vertical_offset": 4,
@@ -152,7 +152,7 @@
       "badge_position": "bottom left",
       "badge_corner_radius": 40,
       "sale_badge_color_scheme": "scheme-5",
-      "sold_out_badge_color_scheme": "scheme-3",
+      "sold_out_badge_color_scheme": "scheme-4",
       "social_twitter_link": "",
       "social_facebook_link": "",
       "social_pinterest_link": "",
@@ -166,7 +166,7 @@
       "predictive_search_show_vendor": false,
       "predictive_search_show_price": false,
       "currency_code_enabled": true,
-      "cart_type": "notification",
+      "cart_type": "drawer",
       "show_vendor": false,
       "show_cart_note": false,
       "cart_drawer_collection": "",

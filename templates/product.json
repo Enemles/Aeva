@@ -3,20 +3,13 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
         "title": {
           "type": "title"
         },
         "caption": {
           "type": "text",
           "settings": {
-            "text": "{{ product.metafields.descriptors.subtitle.value }}",
+            "text": "The self-moving ball that keeps your cat entertained while you're away.",
             "text_style": "subtitle"
           }
         },
@@ -36,7 +29,7 @@
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
+            "show_gift_card_recipient": false
           }
         },
         "description": {
@@ -45,36 +38,36 @@
         "collapsible-row-0": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Materials",
-            "icon": "leather",
-            "content": "",
+            "heading": "What's included",
+            "icon": "box",
+            "content": "<p>1x Pawly Interactive Ball<br>1x USB-C charging cable<br>1x Feather tail attachment<br>1x Quick start guide</p>",
             "page": ""
           }
         },
         "collapsible-row-1": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Shipping & Returns",
-            "icon": "truck",
-            "content": "",
+            "heading": "How it works",
+            "icon": "play_circle",
+            "content": "<p>Simply turn on the Pawly Ball and place it on the floor. Built-in motion sensors create unpredictable, lifelike movement that mimics natural prey. The ball automatically changes direction when it hits obstacles, keeping your cat engaged for hours. It also features a smart rest mode — 30 minutes of play, 30 minutes of rest — to match your cat's natural energy cycles.</p>",
             "page": ""
           }
         },
         "collapsible-row-2": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Dimensions",
-            "icon": "ruler",
-            "content": "",
+            "heading": "Shipping & delivery",
+            "icon": "truck",
+            "content": "<p>Orders are processed within 1-3 business days. Estimated delivery: 6-12 business days to UK, Germany, Netherlands, and Scandinavia. You'll receive a tracking number by email as soon as your order ships.</p>",
             "page": ""
           }
         },
         "collapsible-row-3": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Care Instructions",
-            "icon": "heart",
-            "content": "",
+            "heading": "30-day guarantee",
+            "icon": "return",
+            "content": "<p>Not satisfied? No worries. We offer a full 30-day money-back guarantee. If your cat doesn't love the Pawly Ball, we'll refund your purchase — no questions asked. See our full return policy for details.</p>",
             "page": ""
           }
         },
@@ -86,7 +79,6 @@
         }
       },
       "block_order": [
-        "vendor",
         "title",
         "caption",
         "price",
@@ -105,112 +97,105 @@
         "gallery_layout": "stacked",
         "media_size": "large",
         "constrain_to_viewport": true,
-        "mobile_thumbnails": "hide",
+        "mobile_thumbnails": "show",
         "hide_variants": true,
-        "enable_video_looping": false,
+        "enable_video_looping": true,
         "padding_top": 36,
         "padding_bottom": 12
       }
     },
-    "image-with-text": {
+    "why_pawly": {
       "type": "image-with-text",
       "blocks": {
-        "image-with-text-0": {
+        "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Image with text",
+            "heading": "Why we created Pawly",
             "heading_size": "h1"
           }
         },
-        "image-with-text-1": {
+        "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "<p>We know the feeling. You leave for work and your cat stares at you from the window. Indoor cats are safe, but they're also under-stimulated. We designed the Pawly Ball to give them the enrichment they need — even when their favourite human isn't around.</p>",
             "text_style": "body"
           }
         }
       },
       "block_order": [
-        "image-with-text-0",
-        "image-with-text-1"
+        "heading",
+        "text"
       ],
       "settings": {
         "height": "small",
         "desktop_image_width": "medium",
         "layout": "text_first",
-        "desktop_content_position": "top",
+        "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
         "content_layout": "no-overlap",
         "color_scheme": "scheme-2",
         "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
-    "multicolumn": {
+    "trust_badges": {
       "type": "multicolumn",
       "blocks": {
-        "column-0": {
+        "col_shipping": {
           "type": "column",
           "settings": {
-            "title": "Free Shipping",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "title": "Free shipping over €39",
+            "text": "<p>Order two and shipping is on us. Delivered to your door in 6-12 days.</p>",
             "link_label": "",
             "link": ""
           }
         },
-        "column-1": {
+        "col_guarantee": {
           "type": "column",
           "settings": {
-            "title": "Hassle-Free Exchanges",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "title": "30-day guarantee",
+            "text": "<p>Your cat doesn't love it? Full refund. No questions asked.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "col_safe": {
+          "type": "column",
+          "settings": {
+            "title": "Safe materials",
+            "text": "<p>Non-toxic, bite-resistant, no small detachable parts. Designed with pet safety first.</p>",
             "link_label": "",
             "link": ""
           }
         }
       },
       "block_order": [
-        "column-0",
-        "column-1"
+        "col_shipping",
+        "col_guarantee",
+        "col_safe"
       ],
       "settings": {
         "title": "",
-        "heading_size": "h1",
+        "heading_size": "h2",
         "image_width": "full",
         "image_ratio": "adapt",
-        "columns_desktop": 2,
-        "column_alignment": "left",
-        "background_style": "none",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "primary",
         "button_label": "",
         "button_link": "",
-        "swipe_on_mobile": false,
+        "swipe_on_mobile": true,
         "color_scheme": "scheme-1",
         "columns_mobile": "1",
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "related-products": {
-      "type": "related-products",
-      "settings": {
-        "heading": "You may also like",
-        "heading_size": "h2",
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "columns_mobile": "2",
-        "padding_top": 36,
-        "padding_bottom": 28
-      }
     }
   },
   "order": [
     "main",
-    "image-with-text",
-    "multicolumn",
-    "related-products"
+    "why_pawly",
+    "trust_badges"
   ]
 }

@@ -2,38 +2,42 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Projet
+## Project
 
-Shop dropshipping one-product, construit de zéro par un débutant.
+One-product Shopify dropshipping store "Pawly" — interactive self-moving cat ball.
+Built on Shopify Dawn theme (v15.4.1).
 
-**Produit** : Portable misting fan (brumisateur portable) — été, femmes, impulse buy
-**Alternative** : Ice facial roller (angle beauté été)
-**Lancement prévu** : Juin 2026
+## Brand
 
-## Stack
+- **Name**: Pawly
+- **Style**: Warm/natural, Scandi cozy
+- **Colors**: Background crème #FAF7F2, text brun #3D2E1E, accent #C4956A, buttons terracotta #B87333
+- **Typography**: Headings Playfair Display, body Assistant
+- **Tone**: Warm, honest, emotional — guilt of absence angle ("your cat is bored without you")
+- **Language**: English only (UK/DE/NL/Scandinavia markets)
 
-| Élément | Choix |
-|---|---|
-| Shop | Shopify + thème Dawn customisé |
-| Sourcing | CJdropshipping (EU warehouse, livraison FR 5-10j) |
-| Pub | Meta Ads — FR d'abord, puis UK/DE si CPA < €20 |
-| Créas | Seedance 2.0 (vidéo IA) + Gemini image gen |
+## Architecture
 
-## Cible
+Shopify Dawn theme with custom JSON templates:
 
-- Femmes 25-45 ans
-- Marchés : FR (priorité) → UK → DE
-- Budget : €50/jour, test 3 jours = €150
-- Contrainte : pas de contenu féminin dénudé/provocateur
+- `templates/index.json` — Homepage (hero → problem → solution → benefits → social proof → CTA)
+- `templates/product.json` — Product page (gallery, collapsible tabs, trust badges)
+- `templates/page.faq.json` — FAQ (9 collapsible questions)
+- `templates/page.about.json` — About Pawly (brand story)
+- `templates/page.policy.json` — Return & refund policy
+- `config/settings_data.json` — Theme config (colors, typography, spacing, cart drawer)
+- `sections/header-group.json` — Header with announcement bar
+- `sections/footer-group.json` — Footer with newsletter, payment icons
 
-## Priorités dans l'ordre
+## Key Decisions
 
-1. Produit exact sur CJdropshipping
-2. Page produit Shopify (Dawn)
-3. Créas vidéo (Seedance 2.0)
-4. SEO technique de base (2-3 jours max — meta tags, alt, URL, schema)
-5. Lancement Meta Ads juin
+- **Cart type**: Drawer (not page redirect, not notification)
+- **Bundle**: Shopify Bundles app (native) — 2x for €39.99
+- **Reviews**: Judge.me app + imported from AliExpress
+- **Tracking**: Meta Pixel via Facebook & Instagram app, GA4 via Google & YouTube app
+- **Shipping**: Transparent "6-12 business days from our fulfilment partner"
+- **No country/language selectors** — single language store (EN)
 
-## Shopify
+## Navigation
 
-Le thème Shopify sera déposé dans ce repo pour travailler dessus directement.
+Home → Meet the Ball (product) → FAQ → About Pawly → Contact

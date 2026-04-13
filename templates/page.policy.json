@@ -1,0 +1,85 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "policy_details": {
+      "type": "collapsible-content",
+      "blocks": {
+        "policy-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "30-day money-back guarantee",
+            "icon": "return",
+            "row_content": "<p>We stand behind the Pawly Ball. If you're not completely satisfied with your purchase, you have 30 days from the date of delivery to request a full refund. The product must be in its original packaging and in unused or gently used condition.</p>",
+            "page": ""
+          }
+        },
+        "policy-2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How to start a return",
+            "icon": "email",
+            "row_content": "<p>To initiate a return, simply email us at hello@getpawly.com with your order number and reason for return. We'll respond within 24 hours with instructions. Please do not ship items back without contacting us first.</p>",
+            "page": ""
+          }
+        },
+        "policy-3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Return shipping costs",
+            "icon": "truck",
+            "row_content": "<p>Return shipping costs are the responsibility of the customer. We recommend using a tracked shipping method, as we cannot process refunds for items lost in transit. Once we receive and inspect your return, we'll process your refund within 5-7 business days.</p>",
+            "page": ""
+          }
+        },
+        "policy-4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Refund method",
+            "icon": "price_tag",
+            "row_content": "<p>Refunds are issued to your original payment method (credit card, PayPal, or Apple Pay). Please allow 5-7 business days for the refund to appear on your statement after we've confirmed your return.</p>",
+            "page": ""
+          }
+        },
+        "policy-5": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Damaged or defective items",
+            "icon": "heart",
+            "row_content": "<p>If your Pawly Ball arrives damaged or defective, contact us immediately at hello@getpawly.com with photos of the issue. We'll send a replacement at no extra cost — no return needed.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "policy-1",
+        "policy-2",
+        "policy-3",
+        "policy-4",
+        "policy-5"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Return & Refund Policy",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "section",
+        "color_scheme": "scheme-1",
+        "container_color_scheme": "scheme-2",
+        "open_first_collapsible_row": true,
+        "image_ratio": "adapt",
+        "padding_top": 0,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "policy_details"
+  ]
+}
