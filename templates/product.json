@@ -93,7 +93,7 @@
           "type": "inventory",
           "settings": {
             "inventory_threshold": 10,
-            "show_inventory_quantity": true
+            "show_inventory_quantity": false
           }
         },
         "share": {

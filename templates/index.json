@@ -108,7 +108,7 @@
           "type": "button",
           "settings": {
             "button_label": "See it in action",
-            "button_link": "shopify://products/pawly-interactive-ball",
+            "button_link": "shopify://products/pawly-interactive-ball-self-moving-cat-toy",
             "button_style_secondary": false
           }
         }
@@ -254,7 +254,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Get Yours — €24.99",
-            "button_link_1": "shopify://products/pawly-interactive-ball",
+            "button_link_1": "shopify://products/pawly-interactive-ball-self-moving-cat-toy",
             "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
