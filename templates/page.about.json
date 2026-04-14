@@ -15,14 +15,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Hi, we're Pawly.",
+            "heading": "Salut, nous c'est Pawly.",
             "heading_size": "h0"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>We're a small team of indoor cat parents who know the feeling all too well.</p>"
+            "text": "<p>On est une petite équipe de parents de chats d'intérieur qui connaissent trop bien ce sentiment.</p>"
           }
         }
       },
@@ -43,14 +43,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "The guilt was real.",
+            "heading": "La culpabilité était bien réelle.",
             "heading_size": "h1"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Every morning, the same look. Those eyes at the window as you leave for work. Your cat is safe indoors — but is she happy? Is she stimulated? We asked ourselves that question one too many times.</p><p>We tried every toy on the market. Most ended up forgotten under the sofa within a week. What indoor cats actually need is something that moves, surprises, and engages their hunting instincts — without needing a human on the other end.</p><p>That's how the Pawly Ball was born. A simple, smart toy that plays with your cat so you don't have to feel guilty when life gets busy.</p>",
+            "text": "<p>Chaque matin, le même regard. Ces yeux à la fenêtre quand on part au travail. Notre chat est en sécurité à l'intérieur — mais est-il heureux ? Est-il stimulé ? On s'est posé cette question une fois de trop.</p><p>On a essayé tous les jouets du marché. La plupart finissaient oubliés sous le canapé en une semaine. Ce dont les chats d'intérieur ont vraiment besoin, c'est quelque chose qui bouge, qui surprend et qui stimule leur instinct de chasse — sans avoir besoin d'un humain de l'autre côté.</p><p>C'est comme ça que la Pawly Ball est née. Un jouet simple et intelligent qui joue avec votre chat pour que vous n'ayez plus à culpabiliser quand la vie est chargée.</p>",
             "text_style": "body"
           }
         }
@@ -78,14 +78,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Our mission",
+            "heading": "Notre mission",
             "heading_size": "h1"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>We believe every indoor cat deserves enrichment — even when their favourite human isn't around. Pawly exists to give your cat the stimulation they need, and give you the peace of mind you deserve.</p><p>One product. One purpose. Happy cats, guilt-free owners.</p>"
+            "text": "<p>On croit que chaque chat d'intérieur mérite d'être stimulé — même quand son humain préféré n'est pas là. Pawly existe pour offrir à votre chat l'enrichissement dont il a besoin, et vous donner la tranquillité d'esprit que vous méritez.</p><p>Un produit. Un objectif. Des chats heureux, des propriétaires sans culpabilité.</p>"
           }
         }
       },

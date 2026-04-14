@@ -23,7 +23,7 @@
         "caption": {
           "type": "text",
           "settings": {
-            "text": "The self-moving ball that keeps your cat entertained while you're away.",
+            "text": "La balle autonome qui divertit votre chat, même en votre absence.",
             "text_style": "subtitle"
           }
         },
@@ -52,7 +52,7 @@
         "social_proof_quote": {
           "type": "text",
           "settings": {
-            "text": "⭐⭐⭐⭐⭐ \"My cat is totally obsessed — the unpredictable movements and wagging tail keep her busy for hours. Love that it's rechargeable!\" — Emily A., Verified Buyer",
+            "text": "⭐⭐⭐⭐⭐ \"Mon chat est totalement accro — les mouvements imprévisibles et la queue qui remue l'occupent pendant des heures. J'adore qu'elle soit rechargeable !\" — Émilie A., Acheteuse vérifiée",
             "text_style": "body"
           }
         },
@@ -63,36 +63,36 @@
         "collapsible-row-0": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "What's included",
+            "heading": "Contenu du pack",
             "icon": "box",
-            "content": "<p>1x Pawly Interactive Ball (with tail)<br>1x USB-C charging cable</p>",
+            "content": "<p>1x Pawly Ball Interactive (avec queue)<br>1x Câble de charge USB-C</p>",
             "page": ""
           }
         },
         "collapsible-row-1": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "How it works",
+            "heading": "Comment ça marche",
             "icon": "play_circle",
-            "content": "<p>Long-press the button to turn on. The Pawly Ball has 3 modes:<br><br><strong>Fast mode</strong> — high-speed rolling for energetic cats<br><strong>Slow mode</strong> — gentle movement for curious kittens<br><strong>Interactive mode</strong> — activates on touch, rests when your cat does<br><br>Double-click the button to switch between modes. Built-in motion sensors detect obstacles and automatically reverse direction. The wave-textured silicone surface creates unpredictable movement on any floor type.</p>",
+            "content": "<p>Appui long pour allumer. La Pawly Ball a 3 modes :<br><br><strong>Mode rapide</strong> — roulement haute vitesse pour les chats énergiques<br><strong>Mode lent</strong> — mouvements doux pour les chatons curieux<br><strong>Mode interactif</strong> — s'active au toucher, se repose quand votre chat s'arrête<br><br>Cliquez pour changer de mode. Les capteurs intégrés détectent les obstacles et inversent automatiquement la direction. La surface en silicone texturée crée des mouvements imprévisibles sur tous les types de sol.</p>",
             "page": ""
           }
         },
         "collapsible-row-2": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Shipping & delivery",
+            "heading": "Livraison",
             "icon": "truck",
-            "content": "<p>Orders are processed within 1-3 business days. Estimated delivery: 5-8 business days to Europe (France, Belgium, UK, Germany, Netherlands, Scandinavia and more). You'll receive a tracking number by email as soon as your order ships.</p>",
+            "content": "<p>Commandes traitées sous 1 à 3 jours ouvrés. Livraison estimée : 5 à 8 jours ouvrés en Europe (France, Belgique, et plus). Vous recevrez un numéro de suivi par email dès l'expédition.</p>",
             "page": ""
           }
         },
         "collapsible-row-3": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "30-day guarantee",
+            "heading": "Garantie 30 jours",
             "icon": "return",
-            "content": "<p>Not satisfied? No worries. We offer a full 30-day money-back guarantee. If your cat doesn't love the Pawly Ball, we'll refund your purchase — no questions asked. See our full return policy for details.</p>",
+            "content": "<p>Pas satisfait ? Pas de souci. Nous offrons une garantie satisfait ou remboursé de 30 jours. Si votre chat n'aime pas la Pawly Ball, on vous rembourse — sans question. Voir notre politique de retour pour les détails.</p>",
             "page": ""
           }
         },
@@ -106,7 +106,7 @@
         "share": {
           "type": "share",
           "settings": {
-            "share_label": "Share"
+            "share_label": "Partager"
           }
         }
       },
@@ -149,14 +149,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Why we created Pawly",
+            "heading": "Pourquoi on a créé Pawly",
             "heading_size": "h1"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>We know the feeling. You leave for work and your cat stares at you from the window. Indoor cats are safe, but they're also under-stimulated. We designed the Pawly Ball to give them the enrichment they need — even when their favourite human isn't around.</p>",
+            "text": "<p>On connaît ce sentiment. Vous partez au travail et votre chat vous fixe depuis la fenêtre. Les chats d'intérieur sont en sécurité, mais ils manquent de stimulation. On a conçu la Pawly Ball pour leur offrir l'enrichissement dont ils ont besoin — même quand leur humain préféré n'est pas là.</p>",
             "text_style": "body"
           }
         }
@@ -186,8 +186,8 @@
         "col_shipping": {
           "type": "column",
           "settings": {
-            "title": "Free shipping over €39",
-            "text": "<p>Order two and shipping is on us. Delivered to your door in 6-12 days.</p>",
+            "title": "Livraison gratuite",
+            "text": "<p>Livré chez vous en 5 à 8 jours ouvrés. Suivi inclus.</p>",
             "link_label": "",
             "link": ""
           }
@@ -195,8 +195,8 @@
         "col_guarantee": {
           "type": "column",
           "settings": {
-            "title": "30-day guarantee",
-            "text": "<p>Your cat doesn't love it? Full refund. No questions asked.</p>",
+            "title": "Garantie 30 jours",
+            "text": "<p>Votre chat n'aime pas ? Remboursement intégral. Sans question.</p>",
             "link_label": "",
             "link": ""
           }
@@ -204,8 +204,8 @@
         "col_safe": {
           "type": "column",
           "settings": {
-            "title": "Safe materials",
-            "text": "<p>Non-toxic, bite-resistant, no small detachable parts. Designed with pet safety first.</p>",
+            "title": "Matériaux sûrs",
+            "text": "<p>Plastique alimentaire et silicone. Résistant aux morsures, sans petites pièces. Sécurité d'abord.</p>",
             "link_label": "",
             "link": ""
           }

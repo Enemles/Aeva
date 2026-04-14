@@ -22,45 +22,45 @@
         "policy-1": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "30-day money-back guarantee",
+            "heading": "Garantie satisfait ou remboursé 30 jours",
             "icon": "return",
-            "row_content": "<p>We stand behind the Pawly Ball. If you're not completely satisfied with your purchase, you have 30 days from the date of delivery to request a full refund. The product must be in its original packaging and in unused or gently used condition.</p>",
+            "row_content": "<p>Nous croyons en la Pawly Ball. Si vous n'êtes pas entièrement satisfait, vous avez 30 jours à partir de la date de livraison pour demander un remboursement intégral. Le produit doit être dans son emballage d'origine et en bon état.</p>",
             "page": ""
           }
         },
         "policy-2": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "How to start a return",
+            "heading": "Comment faire un retour",
             "icon": "email",
-            "row_content": "<p>To initiate a return, simply email us at hello@getpawly.com with your order number and reason for return. We'll respond within 24 hours with instructions. Please do not ship items back without contacting us first.</p>",
+            "row_content": "<p>Pour initier un retour, envoyez-nous un email à hello@getpawly.com avec votre numéro de commande et la raison du retour. On vous répond sous 24h avec les instructions. Merci de ne pas renvoyer d'articles sans nous contacter d'abord.</p>",
             "page": ""
           }
         },
         "policy-3": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Return shipping costs",
+            "heading": "Frais de retour",
             "icon": "truck",
-            "row_content": "<p>Return shipping costs are the responsibility of the customer. We recommend using a tracked shipping method, as we cannot process refunds for items lost in transit. Once we receive and inspect your return, we'll process your refund within 5-7 business days.</p>",
+            "row_content": "<p>Les frais de retour sont à la charge du client. Nous recommandons un envoi suivi, car nous ne pouvons pas traiter les remboursements pour les articles perdus en transit. Une fois le retour reçu et inspecté, votre remboursement sera traité sous 5 à 7 jours ouvrés.</p>",
             "page": ""
           }
         },
         "policy-4": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Refund method",
+            "heading": "Mode de remboursement",
             "icon": "price_tag",
-            "row_content": "<p>Refunds are issued to your original payment method (credit card, PayPal, or Apple Pay). Please allow 5-7 business days for the refund to appear on your statement after we've confirmed your return.</p>",
+            "row_content": "<p>Les remboursements sont effectués sur votre moyen de paiement d'origine (carte bancaire, PayPal ou Apple Pay). Comptez 5 à 7 jours ouvrés pour que le remboursement apparaisse sur votre relevé après confirmation du retour.</p>",
             "page": ""
           }
         },
         "policy-5": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Damaged or defective items",
+            "heading": "Articles endommagés ou défectueux",
             "icon": "heart",
-            "row_content": "<p>If your Pawly Ball arrives damaged or defective, contact us immediately at hello@getpawly.com with photos of the issue. We'll send a replacement at no extra cost — no return needed.</p>",
+            "row_content": "<p>Si votre Pawly Ball arrive endommagée ou défectueuse, contactez-nous immédiatement à hello@getpawly.com avec des photos du problème. On vous envoie un remplacement sans frais supplémentaires — pas besoin de retourner l'article.</p>",
             "page": ""
           }
         }
@@ -74,7 +74,7 @@
       ],
       "settings": {
         "caption": "",
-        "heading": "Return & Refund Policy",
+        "heading": "Politique de retour et remboursement",
         "heading_size": "h1",
         "heading_alignment": "center",
         "layout": "section",

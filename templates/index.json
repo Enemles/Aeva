@@ -15,21 +15,21 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "They miss you too.",
+            "heading": "Eux aussi, tu leur manques.",
             "heading_size": "h0"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "Keep your cat entertained, even when you're not home.",
+            "text": "Gardez votre chat stimulé, même quand vous n'êtes pas là.",
             "text_style": "body"
           }
         },
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop Now",
+            "button_label_1": "Découvrir",
             "button_link_1": "shopify://products/new-cat-interactive-ball-toy-automatic-rolling-cat-ball-rechargeable-smart-kitten-interactive-toy-intelligent-balls-toy-for-cat",
             "button_style_secondary_1": false,
             "button_label_2": "",
@@ -63,14 +63,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Indoor cats get bored. Really bored.",
+            "heading": "Les chats d'intérieur s'ennuient. Vraiment.",
             "heading_size": "h1"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>You're at work. They're at home. Alone. Staring at the wall. Indoor cats need mental stimulation to stay healthy and happy — but you can't always be there to play. That's exactly why we created Pawly.</p>"
+            "text": "<p>Vous êtes au travail. Eux sont à la maison. Seuls. À fixer le mur. Les chats d'intérieur ont besoin de stimulation mentale pour rester en bonne santé — mais vous ne pouvez pas toujours être là pour jouer. C'est exactement pour ça qu'on a créé Pawly.</p>"
           }
         }
       },
@@ -93,21 +93,21 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "A toy that plays back.",
+            "heading": "Un jouet qui joue tout seul.",
             "heading_size": "h1"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>The Pawly Ball moves on its own with unpredictable, lifelike motion — triggering your cat's natural hunting instincts. No buttons, no remote. Just turn it on and let the fun begin.</p>",
+            "text": "<p>La Pawly Ball bouge toute seule avec des mouvements imprévisibles et réalistes — déclenchant l'instinct de chasse naturel de votre chat. Pas de boutons, pas de télécommande. Allumez-la et laissez le jeu commencer.</p>",
             "text_style": "body"
           }
         },
         "button": {
           "type": "button",
           "settings": {
-            "button_label": "See it in action",
+            "button_label": "Voir en action",
             "button_link": "shopify://products/new-cat-interactive-ball-toy-automatic-rolling-cat-ball-rechargeable-smart-kitten-interactive-toy-intelligent-balls-toy-for-cat",
             "button_style_secondary": false
           }
@@ -140,8 +140,8 @@
         "col_entertain": {
           "type": "column",
           "settings": {
-            "title": "Entertains for hours",
-            "text": "<p>Smart sensors detect obstacles and change direction — your cat never gets bored of the chase.</p>",
+            "title": "Des heures de jeu",
+            "text": "<p>Des capteurs intelligents détectent les obstacles et changent de direction — votre chat ne se lasse jamais de la poursuite.</p>",
             "link_label": "",
             "link": ""
           }
@@ -149,8 +149,8 @@
         "col_safe": {
           "type": "column",
           "settings": {
-            "title": "Safe & durable",
-            "text": "<p>Made from non-toxic, bite-resistant materials. No small parts. Designed with your cat's safety in mind.</p>",
+            "title": "Sûr et résistant",
+            "text": "<p>Fabriqué en plastique alimentaire et silicone. Pas de petites pièces détachables. Conçu pour la sécurité de votre chat.</p>",
             "link_label": "",
             "link": ""
           }
@@ -158,8 +158,8 @@
         "col_rechargeable": {
           "type": "column",
           "settings": {
-            "title": "30-min charge, 6h play",
-            "text": "<p>Fully charged in just 30 minutes via USB-C. Up to 6 hours of play on a single charge. No batteries ever.</p>",
+            "title": "30 min de charge, 6h de jeu",
+            "text": "<p>Rechargée en 30 minutes via USB-C. Jusqu'à 6 heures de jeu sur une seule charge. Zéro pile.</p>",
             "link_label": "",
             "link": ""
           }
@@ -171,7 +171,7 @@
         "col_rechargeable"
       ],
       "settings": {
-        "title": "Why cats love Pawly",
+        "title": "Pourquoi les chats adorent Pawly",
         "heading_size": "h2",
         "image_width": "third",
         "image_ratio": "adapt",
@@ -194,7 +194,7 @@
           "type": "column",
           "settings": {
             "title": "⭐⭐⭐⭐⭐",
-            "text": "<p>\"My cat literally won't stop chasing it. I finally don't feel guilty leaving for work.\"</p><p><strong>— Sarah K.</strong><br><em>London, UK</em></p>",
+            "text": "<p>\"Mon chat n'arrête pas de la poursuivre. Je ne culpabilise enfin plus de partir au travail.\"</p><p><strong>— Sarah K.</strong><br><em>Bruxelles, BE</em></p>",
             "link_label": "",
             "link": ""
           }
@@ -203,7 +203,7 @@
           "type": "column",
           "settings": {
             "title": "⭐⭐⭐⭐⭐",
-            "text": "<p>\"Bought two for my cats. Best purchase I've made this year. They play with it every single day.\"</p><p><strong>— Emma L.</strong><br><em>Amsterdam, NL</em></p>",
+            "text": "<p>\"J'en ai pris deux pour mes chats. Meilleur achat de l'année. Ils jouent avec tous les jours.\"</p><p><strong>— Emma L.</strong><br><em>Lyon, FR</em></p>",
             "link_label": "",
             "link": ""
           }
@@ -212,7 +212,7 @@
           "type": "column",
           "settings": {
             "title": "⭐⭐⭐⭐⭐",
-            "text": "<p>\"My lazy indoor cat is finally getting exercise. Absolute game changer.\"</p><p><strong>— Lisa M.</strong><br><em>Stockholm, SE</em></p>",
+            "text": "<p>\"Mon chat paresseux fait enfin de l'exercice. Un vrai game changer.\"</p><p><strong>— Lisa M.</strong><br><em>Paris, FR</em></p>",
             "link_label": "",
             "link": ""
           }
@@ -224,7 +224,7 @@
         "review_3"
       ],
       "settings": {
-        "title": "What cat parents are saying",
+        "title": "Ce que disent les parents de chats",
         "heading_size": "h2",
         "image_width": "full",
         "image_ratio": "adapt",
@@ -246,14 +246,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Give your cat the playtime they deserve.",
+            "heading": "Offrez à votre chat le jeu qu'il mérite.",
             "heading_size": "h1"
           }
         },
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Get Yours — €24.99",
+            "button_label_1": "Je commande — 24,99€",
             "button_link_1": "shopify://products/new-cat-interactive-ball-toy-automatic-rolling-cat-ball-rechargeable-smart-kitten-interactive-toy-intelligent-balls-toy-for-cat",
             "button_style_secondary_1": false,
             "button_label_2": "",
