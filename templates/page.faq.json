@@ -87,7 +87,7 @@
           "settings": {
             "heading": "Where does it ship from and how long does delivery take?",
             "icon": "truck",
-            "row_content": "<p>Orders are shipped from our fulfilment partner within 1-3 business days. Estimated delivery is 5-8 business days to Europe (UK, Germany, Netherlands, Scandinavia, France). You'll receive a tracking number via email once your order is dispatched.</p>",
+            "row_content": "<p>Orders are shipped from our fulfilment partner within 1-3 business days. Estimated delivery is 5-8 business days to Europe (France, Belgium, UK, Germany, Netherlands, Scandinavia and more). You'll receive a tracking number via email once your order is dispatched.</p>",
             "page": ""
           }
         },
@@ -96,7 +96,7 @@
           "settings": {
             "heading": "Do you ship to my country?",
             "icon": "globe",
-            "row_content": "<p>We currently ship to the United Kingdom, Germany, the Netherlands, Sweden, Denmark, Norway, and Finland. We're working on expanding to more European countries soon. If your country isn't listed, feel free to contact us and we'll see what we can do.</p>",
+            "row_content": "<p>We ship to France, Belgium, United Kingdom, Germany, the Netherlands, Sweden, Denmark, Norway, Finland, and most of Europe. If your country isn't listed at checkout, feel free to contact us and we'll see what we can do.</p>",
             "page": ""
           }
         }
