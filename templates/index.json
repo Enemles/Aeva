@@ -158,8 +158,8 @@
         "col_rechargeable": {
           "type": "column",
           "settings": {
-            "title": "20-min charge, 6h play",
-            "text": "<p>Fully charged in just 20 minutes via USB-C. Up to 6 hours of play on a single charge. No batteries ever.</p>",
+            "title": "30-min charge, 6h play",
+            "text": "<p>Fully charged in just 30 minutes via USB-C. Up to 6 hours of play on a single charge. No batteries ever.</p>",
             "link_label": "",
             "link": ""
           }

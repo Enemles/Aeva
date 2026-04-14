@@ -42,7 +42,7 @@
           "settings": {
             "heading": "Is it safe for my cat?",
             "icon": "heart",
-            "row_content": "<p>Absolutely. The Pawly Ball is made from PC and food-grade silicone — soft, skin-friendly, and bite-resistant. No small detachable parts. It's CE, FCC, and RoHS certified, meeting European and US safety standards.</p>",
+            "row_content": "<p>Absolutely. The Pawly Ball is made from food-grade plastic and silicone — soft, skin-friendly, and bite-resistant. The tail is securely attached and designed to withstand active play.</p>",
             "page": ""
           }
         },
@@ -51,7 +51,7 @@
           "settings": {
             "heading": "How long does the battery last?",
             "icon": "lightning_bolt",
-            "row_content": "<p>A full charge takes only 20 minutes via USB-C and provides up to 6 hours of play. No disposable batteries needed — better for the environment and your wallet.</p>",
+            "row_content": "<p>A full charge takes only 30 minutes via USB-C and provides up to 6 hours of play. No disposable batteries needed — better for the environment and your wallet.</p>",
             "page": ""
           }
         },
