@@ -22,45 +22,45 @@
         "policy-1": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Garantie satisfait ou remboursé 30 jours",
+            "heading": "Garantie 30 jours — produits défectueux",
             "icon": "return",
-            "row_content": "<p>Nous croyons en la Pawly Ball. Si vous n'êtes pas entièrement satisfait, vous avez 30 jours à partir de la date de livraison pour demander un remboursement intégral. Le produit doit être dans son emballage d'origine et en bon état.</p>",
+            "row_content": "<p>Nous offrons une garantie de 30 jours à compter de la date de livraison couvrant les <strong>défauts de fabrication et les dommages survenus pendant le transport</strong>. Cette garantie couvre : produit qui ne s'allume pas, batterie qui ne charge plus, coque fissurée ou cassée, moteur défaillant.</p><p>Les retours pour convenance personnelle (\"mon chat n'aime pas\", \"je n'en ai plus besoin\") ne sont pas acceptés.</p>",
             "page": ""
           }
         },
         "policy-2": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Comment faire un retour",
+            "heading": "Comment signaler un problème",
             "icon": "email",
-            "row_content": "<p>Pour initier un retour, envoyez-nous un email à hello@getpawly.com avec votre numéro de commande et la raison du retour. On vous répond sous 24h avec les instructions. Merci de ne pas renvoyer d'articles sans nous contacter d'abord.</p>",
+            "row_content": "<p>Envoyez-nous un email à hello@getpawly.com avec :<br>— Votre numéro de commande<br>— Une description du problème<br>— Des photos ou une vidéo montrant le défaut<br><br>On vous répond sous 24h. <strong>Pas besoin de renvoyer le produit</strong> — les photos suffisent.</p>",
             "page": ""
           }
         },
         "policy-3": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Frais de retour",
+            "heading": "Remplacement ou remboursement",
             "icon": "truck",
-            "row_content": "<p>Les frais de retour sont à la charge du client. Nous recommandons un envoi suivi, car nous ne pouvons pas traiter les remboursements pour les articles perdus en transit. Une fois le retour reçu et inspecté, votre remboursement sera traité sous 5 à 7 jours ouvrés.</p>",
+            "row_content": "<p>Après vérification de votre demande, nous vous proposons en priorité un <strong>remplacement gratuit</strong> expédié sous 48h. Si vous préférez un remboursement, celui-ci sera effectué sur votre moyen de paiement d'origine sous 5 à 7 jours ouvrés.</p>",
             "page": ""
           }
         },
         "policy-4": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Mode de remboursement",
-            "icon": "price_tag",
-            "row_content": "<p>Les remboursements sont effectués sur votre moyen de paiement d'origine (carte bancaire, PayPal ou Apple Pay). Comptez 5 à 7 jours ouvrés pour que le remboursement apparaisse sur votre relevé après confirmation du retour.</p>",
+            "heading": "Colis perdu ou non reçu",
+            "icon": "question_mark",
+            "row_content": "<p>Si votre colis n'arrive pas dans les délais indiqués (5-8 jours ouvrés), contactez-nous avec votre numéro de commande. Nous vérifierons le suivi et si le colis est confirmé perdu, nous vous expédierons un nouveau produit sans frais.</p>",
             "page": ""
           }
         },
         "policy-5": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Articles endommagés ou défectueux",
+            "heading": "Ce qui n'est pas couvert",
             "icon": "heart",
-            "row_content": "<p>Si votre Pawly Ball arrive endommagée ou défectueuse, contactez-nous immédiatement à hello@getpawly.com avec des photos du problème. On vous envoie un remplacement sans frais supplémentaires — pas besoin de retourner l'article.</p>",
+            "row_content": "<p>Notre garantie ne couvre pas :<br>— L'usure normale liée à une utilisation quotidienne<br>— Les dommages causés par une mauvaise utilisation (immersion dans l'eau, chargeur non compatible, etc.)<br>— Les retours pour convenance personnelle<br><br>Pour toute question, contactez-nous à hello@getpawly.com — on est là pour vous aider.</p>",
             "page": ""
           }
         }

@@ -76,9 +76,9 @@
         "faq-7": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Et si mon chat n'aime pas ?",
+            "heading": "Et si la balle tombe en panne ?",
             "icon": "return",
-            "row_content": "<p>On offre une garantie satisfait ou remboursé de 30 jours. Si votre chat n'aime pas la Pawly Ball, contactez-nous et on vous rembourse — sans question. On veut que vous et votre chat soyez heureux.</p>",
+            "row_content": "<p>La Pawly Ball est garantie 30 jours contre les défauts de fabrication. Si elle ne s'allume plus, ne charge plus ou se casse — envoyez-nous une photo à hello@getpawly.com et on vous envoie un remplacement gratuit sous 48h. Pas besoin de retourner le produit.</p>",
             "page": ""
           }
         },

@@ -92,7 +92,7 @@
           "settings": {
             "heading": "Garantie 30 jours",
             "icon": "return",
-            "content": "<p>Pas satisfait ? Pas de souci. Nous offrons une garantie satisfait ou remboursé de 30 jours. Si votre chat n'aime pas la Pawly Ball, on vous rembourse — sans question. Voir notre politique de retour pour les détails.</p>",
+            "content": "<p>Votre Pawly Ball est garantie 30 jours contre les défauts de fabrication. Si elle arrive cassée, ne s'allume plus ou tombe en panne — envoyez-nous une photo et on vous renvoie un remplacement gratuitement. Voir notre politique de retour pour les détails.</p>",
             "page": ""
           }
         },
@@ -196,7 +196,7 @@
           "type": "column",
           "settings": {
             "title": "Garantie 30 jours",
-            "text": "<p>Votre chat n'aime pas ? Remboursement intégral. Sans question.</p>",
+            "text": "<p>Un défaut ? On remplace gratuitement. Une photo suffit.</p>",
             "link_label": "",
             "link": ""
           }
