@@ -33,7 +33,7 @@
           "settings": {
             "heading": "Comment signaler un problème",
             "icon": "email",
-            "row_content": "<p>Envoyez-nous un email à hello@getpawly.com avec :<br>— Votre numéro de commande<br>— Une description du problème<br>— Des photos ou une vidéo montrant le défaut<br><br>On vous répond sous 24h. <strong>Pas besoin de renvoyer le produit</strong> — les photos suffisent.</p>",
+            "row_content": "<p>Envoyez-nous un email à contact@gopawly.pro avec :<br>— Votre numéro de commande<br>— Une description du problème<br>— Des photos ou une vidéo montrant le défaut<br><br>On vous répond sous 24h. <strong>Pas besoin de renvoyer le produit</strong> — les photos suffisent.</p>",
             "page": ""
           }
         },
@@ -60,7 +60,7 @@
           "settings": {
             "heading": "Ce qui n'est pas couvert",
             "icon": "heart",
-            "row_content": "<p>Notre garantie ne couvre pas :<br>— L'usure normale liée à une utilisation quotidienne<br>— Les dommages causés par une mauvaise utilisation (immersion dans l'eau, chargeur non compatible, etc.)<br>— Les retours pour convenance personnelle<br><br>Pour toute question, contactez-nous à hello@getpawly.com — on est là pour vous aider.</p>",
+            "row_content": "<p>Notre garantie ne couvre pas :<br>— L'usure normale liée à une utilisation quotidienne<br>— Les dommages causés par une mauvaise utilisation (immersion dans l'eau, chargeur non compatible, etc.)<br>— Les retours pour convenance personnelle<br><br>Pour toute question, contactez-nous à contact@gopawly.pro — on est là pour vous aider.</p>",
             "page": ""
           }
         }
