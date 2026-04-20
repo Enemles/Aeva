@@ -1,0 +1,264 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "judge_me_reviews_preview_badge_g6jg88": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "caption": {
+          "type": "text",
+          "settings": {
+            "text": "La gamelle d'eau portative qui garde ton chien hydraté — en rando, en balade, et partout où tu l'emmènes.",
+            "text_style": "subtitle"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "social_proof_quote": {
+          "type": "text",
+          "settings": {
+            "text": "⭐⭐⭐⭐⭐ \"J'en avais marre des gamelles pliables qui se renversent au bout de cinq minutes. Un clic, mon chien boit, l'eau non bue repart dans la bouteille. Zéro goutte perdue en rando.\" — Thomas R., Acheteur vérifié",
+            "text_style": "body"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "collapsible-row-0": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Contenu du pack",
+            "icon": "box",
+            "content": "<p>1x Pawly Bowl (gourde-gamelle en un)<br>1x Dragonne pour attacher à ta laisse, ton sac ou ton porte-clés</p>",
+            "page": ""
+          }
+        },
+        "collapsible-row-1": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Comment ça marche",
+            "icon": "play_circle",
+            "content": "<p>Un bouton, un geste. Appuie et l'eau remplit la gamelle intégrée. Ton chien boit. L'eau non bue retourne automatiquement dans le réservoir — aucun gaspillage, aucune éclaboussure sur tes chaussures.</p><p>Entièrement étanche, même renversée dans ton sac à dos. Compacte, légère, facile à nettoyer à l'eau claire.</p>",
+            "page": ""
+          }
+        },
+        "collapsible-row-2": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Pour quel chien",
+            "icon": "paw_print",
+            "content": "<p>Pensée pour tous les gabarits : du chiot au grand chien (type Labrador, Berger Allemand). La capacité permet plusieurs arrêts hydratation sur une même balade ou petite rando. Pour les longues sorties, remplis-la avant de partir et tu es tranquille pour des heures.</p>",
+            "page": ""
+          }
+        },
+        "collapsible-row-3": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Livraison",
+            "icon": "truck",
+            "content": "<p>Commandes traitées sous 1 à 3 jours ouvrés. Livraison estimée : 5 à 8 jours ouvrés en Europe (France, Belgique, et plus). Tu reçois un numéro de suivi par email dès l'expédition.</p>",
+            "page": ""
+          }
+        },
+        "collapsible-row-4": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Garantie 30 jours",
+            "icon": "return",
+            "content": "<p>Ta Pawly Bowl est garantie 30 jours contre les défauts de fabrication et les dommages pendant le transport. Fuite à l'arrivée, bouton qui ne fonctionne pas, matériau fissuré — envoie-nous une photo et on te renvoie un remplacement gratuitement. <a href=\"/pages/return-refund-policy\">Voir notre politique de retour</a>.</p>",
+            "page": ""
+          }
+        },
+        "inventory": {
+          "type": "inventory",
+          "settings": {
+            "inventory_threshold": 10,
+            "show_inventory_quantity": false
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Partager"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "judge_me_reviews_preview_badge_g6jg88",
+        "caption",
+        "price",
+        "inventory",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "social_proof_quote",
+        "description",
+        "collapsible-row-0",
+        "collapsible-row-1",
+        "collapsible-row-2",
+        "collapsible-row-3",
+        "collapsible-row-4",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "stacked",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": true,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "why_pawly_bowl": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Pour les rando où on ne veut plus s'arrêter toutes les dix minutes.",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>On en avait marre. Marre de la gourde qui fuit dans le sac, de la gamelle pliable qu'on renverse, de la bouteille qu'on verse maladroitement sur ses chaussures en essayant de faire boire son chien.</p><p>La Pawly Bowl a un design hybride : bouteille et gamelle en un seul objet, en un seul geste. Un clic, ton chien boit. L'eau non bue repart dans le réservoir. Rien ne se perd. Rien ne coule dans le sac. Tu marches, il boit, vous continuez.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "height": "small",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "scheme-2",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "trust_badges": {
+      "type": "multicolumn",
+      "blocks": {
+        "col_shipping": {
+          "type": "column",
+          "settings": {
+            "title": "Livraison gratuite",
+            "text": "<p>Livrée chez toi en 5 à 8 jours ouvrés. Suivi inclus.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "col_leakproof": {
+          "type": "column",
+          "settings": {
+            "title": "Étanche & compacte",
+            "text": "<p>Aucune fuite même à l'envers dans le sac. S'attache à ta laisse ou à ton sac à dos.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "col_guarantee": {
+          "type": "column",
+          "settings": {
+            "title": "Garantie 30 jours",
+            "text": "<p>Un défaut, une fuite dès l'arrivée ? On remplace gratuitement. Une photo suffit.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "col_shipping",
+        "col_leakproof",
+        "col_guarantee"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "color_scheme": "scheme-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1776091454ed7c4237": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_qDBAy7": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_qDBAy7"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "why_pawly_bowl",
+    "trust_badges",
+    "1776091454ed7c4237"
+  ]
+}

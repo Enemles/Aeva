@@ -19,98 +19,108 @@
     "faq_content": {
       "type": "collapsible-content",
       "blocks": {
-        "faq-1": {
+        "faq-shipping-delay": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Est-ce que mon chat va vraiment jouer avec ?",
-            "icon": "paw_print",
-            "row_content": "<p>La plupart des chats sont immédiatement attirés par les mouvements imprévisibles de la Pawly Ball — elle imite le mouvement erratique d'une petite proie, ce qui déclenche leur instinct de chasse naturel. Certains chats jouent tout de suite, d'autres ont besoin de 2-3 sessions pour s'y habituer. On offre une garantie 30 jours, donc si votre chat n'est vraiment pas intéressé, vous êtes couvert.</p>",
-            "page": ""
-          }
-        },
-        "faq-2": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Comment la balle bouge-t-elle toute seule ?",
-            "icon": "question_mark",
-            "row_content": "<p>La Pawly Ball est équipée d'un capteur de mouvement intelligent et d'un système d'évitement d'obstacles automatique. Elle tourne, roule et vibre de manière imprévisible — et quand elle touche un mur ou un meuble, elle fait marche arrière et repart. Elle a 3 modes : rapide, lent et interactif. En mode interactif, elle s'active quand votre chat la touche et se repose quand il s'arrête. Cliquez pour changer de mode.</p>",
-            "page": ""
-          }
-        },
-        "faq-3": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "C'est sans danger pour mon chat ?",
-            "icon": "heart",
-            "row_content": "<p>Absolument. La Pawly Ball est fabriquée en plastique alimentaire et silicone — douce, hypoallergénique et résistante aux morsures. La queue est solidement fixée et conçue pour résister au jeu actif.</p>",
-            "page": ""
-          }
-        },
-        "faq-4": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Combien de temps dure la batterie ?",
-            "icon": "lightning_bolt",
-            "row_content": "<p>Une charge complète prend seulement 30 minutes via USB-C et offre jusqu'à 6 heures de jeu. Pas de piles jetables — mieux pour l'environnement et votre portefeuille.</p>",
-            "page": ""
-          }
-        },
-        "faq-5": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Ça marche sur la moquette ?",
-            "icon": "question_mark",
-            "row_content": "<p>Oui ! La surface en silicone texturée est spécialement conçue pour rouler sur tous les types de sol — parquet, carrelage, laminé et moquette. La texture rend les mouvements encore plus imprévisibles sur la moquette, ce qui captive encore plus les chats.</p>",
-            "page": ""
-          }
-        },
-        "faq-6": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "C'est bruyant ?",
-            "icon": "question_mark",
-            "row_content": "<p>Très silencieux. Le moteur produit un léger ronronnement à peine perceptible — parfait pour les appartements. La plupart des chats préfèrent d'ailleurs les jouets silencieux, les bruits forts pouvant les effrayer.</p>",
-            "page": ""
-          }
-        },
-        "faq-7": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Et si la balle tombe en panne ?",
-            "icon": "return",
-            "row_content": "<p>La Pawly Ball est garantie 30 jours contre les défauts de fabrication. Si elle ne s'allume plus, ne charge plus ou se casse — envoyez-nous une photo à contact@gopawly.pro et on vous envoie un remplacement gratuit sous 48h. Pas besoin de retourner le produit.</p>",
-            "page": ""
-          }
-        },
-        "faq-8": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "D'où ça vient et c'est livré en combien de temps ?",
+            "heading": "D'où ça vient et en combien de temps je suis livré ?",
             "icon": "truck",
-            "row_content": "<p>Les commandes sont expédiées par notre partenaire logistique sous 1 à 3 jours ouvrés. Livraison estimée : 5 à 8 jours ouvrés en Europe (France, Belgique, et plus). Vous recevrez un numéro de suivi par email dès l'expédition.</p>",
+            "row_content": "<p>Les commandes sont expédiées par notre partenaire logistique sous 1 à 3 jours ouvrés. Livraison estimée : 5 à 8 jours ouvrés en France et en Belgique. Tu reçois un numéro de suivi par email dès l'expédition.</p>",
             "page": ""
           }
         },
-        "faq-9": {
+        "faq-shipping-country": {
           "type": "collapsible_row",
           "settings": {
             "heading": "Vous livrez dans mon pays ?",
             "icon": "globe",
-            "row_content": "<p>Nous livrons en France, Belgique, Royaume-Uni, Allemagne, Pays-Bas, Suède, Danemark, Norvège, Finlande et dans la plupart de l'Europe. Si votre pays n'apparaît pas au checkout, contactez-nous.</p>",
+            "row_content": "<p>Nous livrons actuellement en France et en Belgique. L'extension à d'autres pays européens (UK, Allemagne, Pays-Bas, Scandinavie) est prévue dans les prochains mois. Si ton pays n'apparaît pas au checkout, contacte-nous à contact@gopawly.pro.</p>",
+            "page": ""
+          }
+        },
+        "faq-ball-cat-play": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Mon chat va-t-il vraiment jouer avec la Pawly Ball ?",
+            "icon": "paw_print",
+            "row_content": "<p>La plupart des chats sont immédiatement attirés par les mouvements imprévisibles de la Pawly Ball — elle imite le mouvement erratique d'une petite proie, ce qui déclenche leur instinct de chasse naturel. Certains chats jouent tout de suite, d'autres ont besoin de 2-3 sessions pour s'y habituer. Garantie 30 jours si vraiment ton chat n'est pas preneur.</p>",
+            "page": ""
+          }
+        },
+        "faq-ball-movement": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Comment la Pawly Ball bouge-t-elle toute seule ?",
+            "icon": "question_mark",
+            "row_content": "<p>La Pawly Ball est équipée d'un capteur de mouvement intelligent et d'un système d'évitement d'obstacles automatique. Elle tourne, roule et vibre de manière imprévisible — et quand elle touche un mur ou un meuble, elle fait marche arrière et repart. Trois modes : rapide, lent et interactif. En mode interactif, elle s'active quand ton chat la touche et se repose quand il s'arrête.</p>",
+            "page": ""
+          }
+        },
+        "faq-ball-safety": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "La Pawly Ball est-elle sans danger pour mon chat ?",
+            "icon": "heart",
+            "row_content": "<p>Absolument. La Pawly Ball est fabriquée en plastique alimentaire et silicone — doux, hypoallergénique et résistant aux morsures. La queue est solidement fixée et conçue pour résister au jeu actif. Pas de petites pièces détachables.</p>",
+            "page": ""
+          }
+        },
+        "faq-ball-battery": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Combien de temps dure la batterie de la Pawly Ball ?",
+            "icon": "lightning_bolt",
+            "row_content": "<p>Une charge complète prend seulement 30 minutes via USB-C et offre jusqu'à 6 heures de jeu. Pas de piles jetables — mieux pour l'environnement et ton portefeuille.</p>",
+            "page": ""
+          }
+        },
+        "faq-bowl-leakproof": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "La Pawly Bowl est-elle vraiment étanche ?",
+            "icon": "question_mark",
+            "row_content": "<p>Oui, même à l'envers dans ton sac à dos. Le bouton de service verrouille l'eau dans le réservoir ; elle ne coule que quand tu appuies pour remplir la gamelle. L'eau non bue retourne automatiquement dans la bouteille — zéro gaspillage, zéro fuite sur tes affaires.</p>",
+            "page": ""
+          }
+        },
+        "faq-bowl-size": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Pour quelle taille de chien est adaptée la Pawly Bowl ?",
+            "icon": "paw_print",
+            "row_content": "<p>Pensée pour tous les gabarits : du chiot au grand chien (type Labrador, Berger Allemand, Husky). La capacité permet plusieurs arrêts hydratation sur une balade ou une petite rando. Pour les longues sorties, un remplissage avant de partir suffit pour plusieurs heures.</p>",
+            "page": ""
+          }
+        },
+        "faq-bowl-clean": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "La Pawly Bowl est-elle facile à nettoyer ?",
+            "icon": "heart",
+            "row_content": "<p>Très simple : rinçage à l'eau claire après chaque usage. Pour un nettoyage plus profond, un peu de savon doux et une brosse de gourde suffisent. Matériau sans BPA, hypoallergénique, compatible avec tous les types d'eau (robinet, source).</p>",
+            "page": ""
+          }
+        },
+        "faq-warranty": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Et si un produit arrive cassé ou tombe en panne ?",
+            "icon": "return",
+            "row_content": "<p>Tous nos produits sont garantis 30 jours contre les défauts de fabrication et les dommages survenus pendant le transport. Envoie-nous une photo à contact@gopawly.pro avec ton numéro de commande et on t'envoie un remplacement gratuit sous 48h. Pas besoin de retourner le produit. <a href=\"/pages/return-refund-policy\">Voir notre politique complète</a>.</p>",
             "page": ""
           }
         }
       },
       "block_order": [
-        "faq-1",
-        "faq-2",
-        "faq-3",
-        "faq-4",
-        "faq-5",
-        "faq-6",
-        "faq-7",
-        "faq-8",
-        "faq-9"
+        "faq-shipping-delay",
+        "faq-shipping-country",
+        "faq-ball-cat-play",
+        "faq-ball-movement",
+        "faq-ball-safety",
+        "faq-ball-battery",
+        "faq-bowl-leakproof",
+        "faq-bowl-size",
+        "faq-bowl-clean",
+        "faq-warranty"
       ],
       "settings": {
         "caption": "FAQ",

@@ -24,7 +24,7 @@
           "settings": {
             "heading": "Garantie 30 jours — produits défectueux",
             "icon": "return",
-            "row_content": "<p>Nous offrons une garantie de 30 jours à compter de la date de livraison couvrant les <strong>défauts de fabrication et les dommages survenus pendant le transport</strong>. Cette garantie couvre : produit qui ne s'allume pas, batterie qui ne charge plus, coque fissurée ou cassée, moteur défaillant.</p><p>Les retours pour convenance personnelle (\"mon chat n'aime pas\", \"je n'en ai plus besoin\") ne sont pas acceptés.</p>",
+            "row_content": "<p>Nous offrons une garantie de 30 jours à compter de la date de livraison couvrant les <strong>défauts de fabrication et les dommages survenus pendant le transport</strong>. Cette garantie couvre : produit qui ne fonctionne pas, composant cassé ou fissuré à l'arrivée, défaillance technique dans les 30 premiers jours d'utilisation normale.</p><p>Les retours pour convenance personnelle (« mon animal ne l'utilise pas », « je n'en ai plus besoin ») ne sont pas acceptés.</p>",
             "page": ""
           }
         },
@@ -60,7 +60,7 @@
           "settings": {
             "heading": "Ce qui n'est pas couvert",
             "icon": "heart",
-            "row_content": "<p>Notre garantie ne couvre pas :<br>— L'usure normale liée à une utilisation quotidienne<br>— Les dommages causés par une mauvaise utilisation (immersion dans l'eau, chargeur non compatible, etc.)<br>— Les retours pour convenance personnelle<br><br>Pour toute question, contactez-nous à contact@gopawly.pro — on est là pour vous aider.</p>",
+            "row_content": "<p>Notre garantie ne couvre pas :<br>— L'usure normale liée à une utilisation quotidienne<br>— Les dommages causés par une mauvaise utilisation ou un usage non conforme aux instructions<br>— Les retours pour convenance personnelle<br><br>Pour toute question, contactez-nous à contact@gopawly.pro — on est là pour vous aider.</p>",
             "page": ""
           }
         }

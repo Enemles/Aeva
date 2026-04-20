@@ -15,22 +15,22 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Eux aussi, tu leur manques.",
+            "heading": "On pense à eux comme tu penses à eux.",
             "heading_size": "h0"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "Gardez votre chat stimulé, même quand vous n'êtes pas là.",
+            "text": "Des produits pensés pour le bien-être de ton animal — quand tu travailles, quand tu voyages, quand tu pars en rando.",
             "text_style": "body"
           }
         },
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Découvrir",
-            "button_link_1": "shopify://products/new-cat-interactive-ball-toy-automatic-rolling-cat-ball-rechargeable-smart-kitten-interactive-toy-intelligent-balls-toy-for-cat",
+            "button_label_1": "Découvrir la boutique",
+            "button_link_1": "shopify://collections/all",
             "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
@@ -57,20 +57,20 @@
         "show_text_below": false
       }
     },
-    "problem_statement": {
+    "brand_pitch": {
       "type": "rich-text",
       "blocks": {
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Les chats d'intérieur s'ennuient. Vraiment.",
+            "heading": "On connaît ce sentiment.",
             "heading_size": "h1"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Vous êtes au travail. Eux sont à la maison. Seuls. À fixer le mur. Les chats d'intérieur ont besoin de stimulation mentale pour rester en bonne santé — mais vous ne pouvez pas toujours être là pour jouer. C'est exactement pour ça qu'on a créé Pawly.</p>"
+            "text": "<p>Le regard de ton chat à la fenêtre quand tu pars au travail. Ton chien qui tire sur sa laisse en pleine rando et qui a soif. Ces petits moments où tu aimerais pouvoir faire plus, mieux.</p><p>Chez Pawly, on pense à eux comme tu penses à eux — et on ramène les produits qui vont avec.</p>"
           }
         }
       },
@@ -87,61 +87,57 @@
         "padding_bottom": 40
       }
     },
-    "solution_feature": {
-      "type": "image-with-text",
+    "product_showcase": {
+      "type": "multicolumn",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "card_cat_ball": {
+          "type": "column",
           "settings": {
-            "heading": "Un jouet qui joue tout seul.",
-            "heading_size": "h1"
+            "title": "Pawly Ball — pour ton chat",
+            "text": "<p>La balle auto-mobile qui garde ton chat d'intérieur stimulé pendant des heures. Mouvements imprévisibles, capteurs intelligents, zéro télécommande.</p>",
+            "link_label": "Voir la Pawly Ball",
+            "link": "shopify://products/new-cat-interactive-ball-toy-automatic-rolling-cat-ball-rechargeable-smart-kitten-interactive-toy-intelligent-balls-toy-for-cat"
           }
         },
-        "text": {
-          "type": "text",
+        "card_water_bowl": {
+          "type": "column",
           "settings": {
-            "text": "<p>La Pawly Ball bouge toute seule avec des mouvements imprévisibles et réalistes — déclenchant l'instinct de chasse naturel de votre chat. Pas de boutons, pas de télécommande. Allumez-la et laissez le jeu commencer.</p>",
-            "text_style": "body"
-          }
-        },
-        "button": {
-          "type": "button",
-          "settings": {
-            "button_label": "Voir en action",
-            "button_link": "shopify://products/new-cat-interactive-ball-toy-automatic-rolling-cat-ball-rechargeable-smart-kitten-interactive-toy-intelligent-balls-toy-for-cat",
-            "button_style_secondary": false
+            "title": "Pawly Bowl — pour ton chien",
+            "text": "<p>La gamelle d'eau portative pour les rando, les balades en ville et les journées chaudes. Ton chien a toujours de l'eau fraîche, où que tu l'emmènes.</p>",
+            "link_label": "Voir la Pawly Bowl",
+            "link": "shopify://products/pawly-bowl-gamelle-deau-portative-pour-chien"
           }
         }
       },
       "block_order": [
-        "heading",
-        "text",
-        "button"
+        "card_cat_ball",
+        "card_water_bowl"
       ],
       "settings": {
-        "image": "shopify://shop_images/Image_Editor_Apr_13_2026.png",
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "image_behavior": "none",
-        "content_layout": "no-overlap",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "mobile_content_alignment": "left",
-        "section_color_scheme": "scheme-1",
+        "title": "Notre boutique",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 2,
+        "column_alignment": "center",
+        "background_style": "primary",
         "color_scheme": "scheme-2",
-        "padding_top": 40,
-        "padding_bottom": 40
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 48,
+        "padding_bottom": 48
       }
     },
     "benefits": {
       "type": "multicolumn",
       "blocks": {
-        "col_entertain": {
+        "col_wellbeing": {
           "type": "column",
           "settings": {
-            "title": "Des heures de jeu",
-            "text": "<p>Des capteurs intelligents détectent les obstacles et changent de direction — votre chat ne se lasse jamais de la poursuite.</p>",
+            "title": "Pensés pour leur bien-être",
+            "text": "<p>Chaque produit Pawly est choisi pour apporter du confort, du jeu ou de la stimulation — pas pour remplir une étagère.</p>",
             "link_label": "",
             "link": ""
           }
@@ -149,29 +145,29 @@
         "col_safe": {
           "type": "column",
           "settings": {
-            "title": "Sûr et résistant",
-            "text": "<p>Fabriqué en plastique alimentaire et silicone. Pas de petites pièces détachables. Conçu pour la sécurité de votre chat.</p>",
+            "title": "Matériaux sûrs",
+            "text": "<p>Plastique alimentaire, silicone souple, textiles sans BPA. Testés pour un usage quotidien, résistants aux morsures et aux pattes curieuses.</p>",
             "link_label": "",
             "link": ""
           }
         },
-        "col_rechargeable": {
+        "col_guarantee": {
           "type": "column",
           "settings": {
-            "title": "30 min de charge, 6h de jeu",
-            "text": "<p>Rechargée en 30 minutes via USB-C. Jusqu'à 6 heures de jeu sur une seule charge. Zéro pile.</p>",
+            "title": "Garantie 30 jours",
+            "text": "<p>Un défaut, une casse à l'arrivée ? On remplace sans frais. Une photo suffit — pas besoin de renvoyer.</p>",
             "link_label": "",
             "link": ""
           }
         }
       },
       "block_order": [
-        "col_entertain",
+        "col_wellbeing",
         "col_safe",
-        "col_rechargeable"
+        "col_guarantee"
       ],
       "settings": {
-        "title": "Pourquoi les chats adorent Pawly",
+        "title": "Pourquoi Pawly",
         "heading_size": "h2",
         "image_width": "third",
         "image_ratio": "adapt",
@@ -194,7 +190,7 @@
           "type": "column",
           "settings": {
             "title": "⭐⭐⭐⭐⭐",
-            "text": "<p>\"Mon chat n'arrête pas de la poursuivre. Je ne culpabilise enfin plus de partir au travail.\"</p><p><strong>— Sarah K.</strong><br><em>Bruxelles, BE</em></p>",
+            "text": "<p>\"Mon chat n'arrête pas de la poursuivre. Je ne culpabilise enfin plus de partir au travail.\"</p><p><strong>— Sarah K.</strong><br><em>Bruxelles, BE — Pawly Ball</em></p>",
             "link_label": "",
             "link": ""
           }
@@ -203,7 +199,7 @@
           "type": "column",
           "settings": {
             "title": "⭐⭐⭐⭐⭐",
-            "text": "<p>\"J'en ai pris deux pour mes chats. Meilleur achat de l'année. Ils jouent avec tous les jours.\"</p><p><strong>— Emma L.</strong><br><em>Lyon, FR</em></p>",
+            "text": "<p>\"J'en ai pris deux pour mes chats. Meilleur achat de l'année. Ils jouent avec tous les jours.\"</p><p><strong>— Emma L.</strong><br><em>Lyon, FR — Pawly Ball</em></p>",
             "link_label": "",
             "link": ""
           }
@@ -212,7 +208,7 @@
           "type": "column",
           "settings": {
             "title": "⭐⭐⭐⭐⭐",
-            "text": "<p>\"Mon chat paresseux fait enfin de l'exercice. Un vrai game changer.\"</p><p><strong>— Lisa M.</strong><br><em>Paris, FR</em></p>",
+            "text": "<p>\"Mon chat paresseux fait enfin de l'exercice. Un vrai game changer.\"</p><p><strong>— Lisa M.</strong><br><em>Paris, FR — Pawly Ball</em></p>",
             "link_label": "",
             "link": ""
           }
@@ -224,7 +220,7 @@
         "review_3"
       ],
       "settings": {
-        "title": "Ce que disent les parents de chats",
+        "title": "Ce que disent les propriétaires Pawly",
         "heading_size": "h2",
         "image_width": "full",
         "image_ratio": "adapt",
@@ -246,15 +242,15 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Offrez à votre chat le jeu qu'il mérite.",
+            "heading": "Prêt à rejoindre la famille Pawly ?",
             "heading_size": "h1"
           }
         },
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Je commande — 24,99€",
-            "button_link_1": "shopify://products/new-cat-interactive-ball-toy-automatic-rolling-cat-ball-rechargeable-smart-kitten-interactive-toy-intelligent-balls-toy-for-cat",
+            "button_label_1": "Voir tous nos produits",
+            "button_link_1": "shopify://collections/all",
             "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
@@ -283,8 +279,8 @@
   },
   "order": [
     "hero_banner",
-    "problem_statement",
-    "solution_feature",
+    "brand_pitch",
+    "product_showcase",
     "benefits",
     "social_proof",
     "final_cta"

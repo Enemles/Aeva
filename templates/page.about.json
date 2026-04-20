@@ -22,7 +22,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>On est une petite équipe de parents de chats d'intérieur qui connaissent trop bien ce sentiment.</p>"
+            "text": "<p>Une petite équipe qui vit avec des chats, des chiens, et pas mal de poils sur le canapé.</p>"
           }
         }
       },
@@ -43,14 +43,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "La culpabilité était bien réelle.",
+            "heading": "Ces petits moments qui pincent.",
             "heading_size": "h1"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Chaque matin, le même regard. Ces yeux à la fenêtre quand on part au travail. Notre chat est en sécurité à l'intérieur — mais est-il heureux ? Est-il stimulé ? On s'est posé cette question une fois de trop.</p><p>On a essayé tous les jouets du marché. La plupart finissaient oubliés sous le canapé en une semaine. Ce dont les chats d'intérieur ont vraiment besoin, c'est quelque chose qui bouge, qui surprend et qui stimule leur instinct de chasse — sans avoir besoin d'un humain de l'autre côté.</p><p>C'est comme ça que la Pawly Ball est née. Un jouet simple et intelligent qui joue avec votre chat pour que vous n'ayez plus à culpabiliser quand la vie est chargée.</p>",
+            "text": "<p>Chaque matin, ces yeux à la fenêtre quand on part au travail. L'envie d'emmener son chien en rando mais la peur qu'il crève de soif. Ces moments où on voudrait pouvoir faire mieux pour eux — mais on court, on bosse, on oublie, on improvise.</p><p>Pawly a commencé par nos chats. On cherchait quelque chose d'intelligent pour stimuler leur instinct de chasse quand on n'était pas à côté pour jouer. C'est comme ça qu'est née la Pawly Ball.</p><p>Puis l'été est arrivé, et on s'est rendu compte qu'on avait le même problème avec nos chiens en rando : l'eau fraîche à portée de patte, pas une bouteille qu'on sort maladroitement. D'où la Pawly Bowl.</p><p>L'idée derrière Pawly, c'est simple : on pense à eux comme tu penses à eux. Et on conçoit les produits qui vont avec.</p>",
             "text_style": "body"
           }
         }
@@ -78,14 +78,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Notre mission",
+            "heading": "Notre promesse",
             "heading_size": "h1"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>On croit que chaque chat d'intérieur mérite d'être stimulé — même quand son humain préféré n'est pas là. Pawly existe pour offrir à votre chat l'enrichissement dont il a besoin, et vous donner la tranquillité d'esprit que vous méritez.</p><p>Un produit. Un objectif. Des chats heureux, des propriétaires sans culpabilité.</p>"
+            "text": "<p>Pas de catalogue infini. Pas de produits juste pour remplir. À chaque fois qu'on ajoute quelque chose à la boutique, on se pose la même question : est-ce que ça va vraiment améliorer sa vie au quotidien ?</p><p>Si la réponse est non, on passe.</p><p>Des produits qu'on utiliserait nous-mêmes, pour des animaux qu'on aime autant que toi.</p>"
           }
         }
       },

@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "skills": {
+    "product-page-seo": {
+      "source": "nexscope-ai/ecommerce-skills",
+      "sourceType": "github",
+      "computedHash": "829536339baf64288c70a846d3b3ff81d4980466c75bb1b6de1d330a1aee54a6"
+    },
+    "shopify-content": {
+      "source": "jezweb/claude-skills",
+      "sourceType": "github",
+      "computedHash": "f794430913a0aad4d58f72d634364b3fedc48198ae52fd9d04505ae46f4c702c"
+    }
+  }
+}
