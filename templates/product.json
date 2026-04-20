@@ -31,6 +31,14 @@
           "type": "price",
           "settings": {}
         },
+        "inventory": {
+          "type": "inventory",
+          "settings": {
+            "text_style": "body",
+            "inventory_threshold": 10,
+            "show_inventory_quantity": false
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -96,13 +104,6 @@
             "page": ""
           }
         },
-        "inventory": {
-          "type": "inventory",
-          "settings": {
-            "inventory_threshold": 10,
-            "show_inventory_quantity": false
-          }
-        },
         "share": {
           "type": "share",
           "settings": {
@@ -166,6 +167,7 @@
         "text"
       ],
       "settings": {
+        "image": "shopify://shop_images/Cat_Waits_for_Owner_Image_Apr_13_2026_2.jpg",
         "height": "small",
         "desktop_image_width": "medium",
         "layout": "text_first",
