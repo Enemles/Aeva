@@ -44,7 +44,7 @@
         "button"
       ],
       "settings": {
-        "image": "shopify://shop_images/Cat_Waits_for_Owner_Image_Apr_13_2026.jpg",
+        "image": "shopify://shop_images/Homepage_hero.jpg",
         "image_overlay_opacity": 30,
         "image_height": "large",
         "image_behavior": "none",
@@ -93,6 +93,7 @@
         "card_cat_ball": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/Indoor_Cat_Toy.jpg",
             "title": "Pawly Ball — pour ton chat",
             "text": "<p>La balle auto-mobile qui garde ton chat d'intérieur stimulé pendant des heures. Mouvements imprévisibles, capteurs intelligents, zéro télécommande.</p>",
             "link_label": "Voir la Pawly Ball",
@@ -102,6 +103,7 @@
         "card_water_bowl": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/Outdoor_dog_bowl.jpg",
             "title": "Pawly Bowl — pour ton chien",
             "text": "<p>La gamelle d'eau portative pour les rando, les balades en ville et les journées chaudes. Ton chien a toujours de l'eau fraîche, où que tu l'emmènes.</p>",
             "link_label": "Voir la Pawly Bowl",
@@ -263,7 +265,7 @@
         "button"
       ],
       "settings": {
-        "image": "shopify://shop_images/Cat_Waits_for_Owner_Image_Apr_13_2026_3.jpg",
+        "image": "shopify://shop_images/FinalCTA.jpg",
         "image_overlay_opacity": 40,
         "image_height": "medium",
         "image_behavior": "none",
