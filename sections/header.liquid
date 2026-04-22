@@ -137,11 +137,11 @@
                 {%- if customer and customer.has_avatar? -%}
                   {{ customer | avatar }}
                 {%- else -%}
-                  <span class="svg-wrapper icon">{{ 'icon-account.svg' | inline_asset_content }}</span>
+                  <span class="svg-wrapper icon">{{ 'pawly-icon-user.svg' | inline_asset_content }}</span>
                 {%- endif -%}
               </account-icon>
             {%- else -%}
-              <span class="svg-wrapper icon">{{ 'icon-account.svg' | inline_asset_content }}</span>
+              <span class="svg-wrapper icon">{{ 'pawly-icon-user.svg' | inline_asset_content }}</span>
             {%- endif -%}
           </a>
         {%- endif -%}
@@ -162,9 +162,9 @@
           aria-label="{{ 'templates.cart.cart' | t }}"
         >
           {% if cart == empty %}
-            <span class="svg-wrapper icon">{{ 'icon-cart-empty.svg' | inline_asset_content }}</span>
+            <span class="svg-wrapper icon">{{ 'pawly-icon-bag.svg' | inline_asset_content }}</span>
           {% else %}
-            <span class="svg-wrapper icon">{{ 'icon-cart.svg' | inline_asset_content }}</span>
+            <span class="svg-wrapper icon">{{ 'pawly-icon-bag.svg' | inline_asset_content }}</span>
           {% endif %}
           {%- if cart != empty -%}
             <span class="pawly-header__cart-count" aria-hidden="true">
