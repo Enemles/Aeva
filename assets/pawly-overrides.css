@@ -59,7 +59,10 @@
    ============================================================ */
 
 /* Headings : Quicksand est déjà géométrique rond, pas besoin de serrer */
-h1, h2, .h1, .h2,
+h1,
+h2,
+.h1,
+.h2,
 .section-header__title,
 .title-wrapper-with-link .title {
   letter-spacing: 0;
@@ -108,9 +111,10 @@ h1, h2, .h1, .h2,
   padding: 1.4rem 2.6rem;
   min-height: 5rem;
   border: 0;
-  transition: background-color var(--pawly-duration-slow) var(--pawly-ease),
-              color var(--pawly-duration-slow) var(--pawly-ease),
-              opacity 200ms var(--pawly-ease);
+  transition:
+    background-color var(--pawly-duration-slow) var(--pawly-ease),
+    color var(--pawly-duration-slow) var(--pawly-ease),
+    opacity 200ms var(--pawly-ease);
 }
 
 /* Primary — terracotta qui s'assombrit doucement au hover, pas d'inversion brutale */
@@ -270,8 +274,9 @@ h1, h2, .h1, .h2,
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  transition: color var(--pawly-duration-slow) var(--pawly-ease),
-              gap var(--pawly-duration-slow) var(--pawly-ease);
+  transition:
+    color var(--pawly-duration-slow) var(--pawly-ease),
+    gap var(--pawly-duration-slow) var(--pawly-ease);
 }
 
 .pawly-card__cta:hover {
@@ -361,7 +366,6 @@ h1, h2, .h1, .h2,
   font-family: var(--font-heading-family);
   font-weight: 500;
   font-size: 1.2rem;
-  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--pawly-color-brown);
   text-decoration: none;
@@ -536,12 +540,14 @@ header-drawer {
 }
 
 /* ============================================================
-   Mobile drawer menu — refonte UI Pawly
+   Mobile drawer menu — refonte UI Pawly (minimal, flat, editorial)
+   Règles !important nécessaires pour battre la spécificité de Dawn
+   (component-menu-drawer.css est chargé avec priorité égale).
    ============================================================ */
 
 .menu-drawer {
-  background: var(--pawly-color-cream);
-  filter: none;
+  background: var(--pawly-color-cream) !important;
+  filter: none !important;
   box-shadow: 0 0 40px rgba(61, 46, 30, 0.08);
 }
 
@@ -551,140 +557,178 @@ header-drawer {
 }
 
 .menu-drawer__navigation {
-  padding: 3rem 2rem 2rem;
+  padding: 3.2rem 2.4rem 2rem !important;
 }
 
+/* Reset puces + marges sur toutes les listes du drawer */
+.menu-drawer__menu,
+.menu-drawer .list-social,
+.menu-drawer .countries,
+.menu-drawer ul {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin: 0 !important;
+}
+
+.menu-drawer__menu li,
 .js .menu-drawer__menu li {
-  margin-bottom: 0;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
+.menu-drawer__menu li::before,
+.menu-drawer__menu li::marker {
+  display: none !important;
+  content: none !important;
+}
+
+/* Items menu : flat, pas de box, pas de border — juste du texte qui change de couleur */
 .menu-drawer__menu-item {
-  font-family: var(--font-heading-family);
-  font-weight: 500;
-  font-size: 1.4rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--pawly-color-brown);
-  padding: 1.6rem 1.4rem;
-  border-bottom: 1px solid rgba(61, 46, 30, 0.06);
-  transition: color var(--pawly-duration-slow) var(--pawly-ease),
-              background-color 200ms var(--pawly-ease);
-}
-
-.menu-drawer__menu li:last-child .menu-drawer__menu-item {
-  border-bottom: 0;
+  font-family: var(--font-heading-family) !important;
+  font-weight: 500 !important;
+  font-size: 1.5rem !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  color: var(--pawly-color-brown) !important;
+  padding: 1.4rem 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  text-decoration: none !important;
+  transition: color var(--pawly-duration-slow) var(--pawly-ease) !important;
 }
 
 .menu-drawer__menu-item--active,
 .menu-drawer__menu-item:focus,
-.menu-drawer__menu-item:hover {
-  color: var(--pawly-color-terracotta);
-  background-color: rgba(184, 115, 51, 0.05);
+.menu-drawer__menu-item:hover,
+.menu-drawer__menu-item:focus-visible {
+  color: var(--pawly-color-terracotta) !important;
+  background: transparent !important;
+  outline: none !important;
 }
 
-/* Utility block (bas du drawer) : account + country selector + social */
+.menu-drawer__menu-item--active {
+  font-weight: 600 !important;
+}
+
+/* Utility block (bas du drawer) : bordure fine en haut, padding éditorial */
 .menu-drawer__utility-links {
-  background: transparent;
-  border-top: 1px solid rgba(61, 46, 30, 0.08);
-  padding: 2rem 2rem 2.4rem !important;
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
+  background: transparent !important;
+  border-top: 1px solid rgba(61, 46, 30, 0.08) !important;
+  padding: 2rem 2.4rem 2.8rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.4rem !important;
 }
 
+/* Account link : flat, icône + texte, hover terracotta — pas de box */
 .menu-drawer__account {
-  font-family: var(--font-heading-family);
-  font-weight: 500;
-  font-size: 1.3rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--pawly-color-brown);
-  padding: 1.2rem 1.4rem;
-  border: 1px solid rgba(61, 46, 30, 0.14);
-  background: transparent;
-  border-radius: 2px;
-  transition: all 200ms var(--pawly-ease);
+  font-family: var(--font-heading-family) !important;
+  font-weight: 500 !important;
+  font-size: 1.3rem !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  color: var(--pawly-color-brown) !important;
+  padding: 1.2rem 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  transition: color var(--pawly-duration-slow) var(--pawly-ease) !important;
 }
 
 .menu-drawer__account:hover {
-  color: var(--pawly-color-cream);
-  background: var(--pawly-color-brown);
-  border-color: var(--pawly-color-brown);
+  color: var(--pawly-color-terracotta) !important;
+  background: transparent !important;
 }
 
-.menu-drawer__account account-icon > .svg-wrapper {
-  width: 1.8rem;
-  height: 1.8rem;
-  margin-right: 0.8rem;
+.menu-drawer__account account-icon,
+.menu-drawer__account .svg-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.menu-drawer__account account-icon > .svg-wrapper svg {
+.menu-drawer__account account-icon > .svg-wrapper,
+.menu-drawer__account > .svg-wrapper {
+  width: 1.8rem !important;
+  height: 1.8rem !important;
+  margin: 0 !important;
+}
+
+.menu-drawer__account account-icon > .svg-wrapper svg,
+.menu-drawer__account > .svg-wrapper svg {
   stroke: currentColor;
   fill: none;
   width: 100%;
   height: 100%;
 }
 
-/* Country selector — disclosure button */
+.menu-drawer__account:hover account-icon > .svg-wrapper {
+  transform: none !important;
+}
+
+/* Country selector — bouton flat aligné sur le style Connexion */
 .menu-drawer__localization {
-  padding: 0;
+  padding: 0 !important;
 }
 
 .menu-drawer__localization .disclosure__button,
 .menu-drawer__localization .localization-selector {
-  font-family: var(--font-heading-family);
-  font-weight: 500;
-  font-size: 1.2rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--pawly-color-brown);
-  padding: 1.2rem 1.4rem;
-  border: 1px solid rgba(61, 46, 30, 0.14);
-  background: transparent;
-  border-radius: 2px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  transition: border-color 200ms var(--pawly-ease);
+  font-family: var(--font-heading-family) !important;
+  font-weight: 500 !important;
+  font-size: 1.3rem !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  color: var(--pawly-color-brown) !important;
+  padding: 1.2rem 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  width: auto !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.8rem !important;
+  transition: color var(--pawly-duration-slow) var(--pawly-ease) !important;
 }
 
 .menu-drawer__localization .disclosure__button:hover,
 .menu-drawer__localization .localization-selector:hover {
-  border-color: var(--pawly-color-terracotta);
-  color: var(--pawly-color-terracotta);
+  color: var(--pawly-color-terracotta) !important;
 }
 
 .menu-drawer__localization .disclosure__button .icon-caret {
   width: 1rem;
   height: 0.6rem;
+  margin-left: 0.4rem;
 }
 
-/* Country list panel */
+/* Panel liste des pays : card subtle, items body font, current en terracotta */
 .menu-drawer__localization .disclosure__list-wrapper {
-  background: var(--pawly-color-cream);
-  border: 1px solid rgba(61, 46, 30, 0.1);
-  border-radius: 2px;
-  margin-top: 0.6rem;
-  padding: 0.8rem 0;
+  background: #fff !important;
+  border: 1px solid rgba(61, 46, 30, 0.08) !important;
+  border-radius: 2px !important;
+  margin-top: 0.8rem !important;
+  padding: 0.8rem 0 !important;
   box-shadow: 0 8px 24px rgba(61, 46, 30, 0.08);
   max-height: 40vh;
   overflow-y: auto;
 }
 
 .menu-drawer__localization .country-filter {
-  padding: 0 0 0.6rem !important;
+  padding: 0 1.2rem 0.6rem !important;
   border-bottom: 1px solid rgba(61, 46, 30, 0.06);
   display: flex;
   justify-content: flex-end;
 }
 
 .menu-drawer__localization .country-selector__close-button {
-  color: var(--pawly-color-brown);
-  padding: 0.6rem 1rem;
-  background: transparent;
-  border: 0;
+  color: var(--pawly-color-brown) !important;
+  padding: 0.4rem 0.6rem !important;
+  background: transparent !important;
+  border: 0 !important;
+  min-height: auto !important;
 }
 
 .menu-drawer__localization .country-selector__close-button svg {
@@ -693,39 +737,47 @@ header-drawer {
 }
 
 .menu-drawer__localization .disclosure__list {
-  padding: 0.4rem 0;
+  padding: 0.4rem 0 !important;
+  margin: 0 !important;
+  list-style: none !important;
 }
 
 .menu-drawer__localization .disclosure__item {
-  padding: 0;
-  margin: 0;
-  list-style: none;
+  padding: 0 !important;
+  margin: 0 !important;
+  list-style: none !important;
+}
+
+.menu-drawer__localization .disclosure__item::before,
+.menu-drawer__localization .disclosure__item::marker {
+  display: none !important;
+  content: none !important;
 }
 
 .menu-drawer__localization .disclosure__link {
-  font-family: var(--font-body-family);
-  font-weight: 400;
-  font-size: 1.4rem;
-  letter-spacing: 0;
-  text-transform: none;
-  color: var(--pawly-color-brown);
-  padding: 1rem 1.4rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  text-decoration: none;
-  border-radius: 0;
-  transition: background-color 150ms var(--pawly-ease);
+  font-family: var(--font-body-family) !important;
+  font-weight: 400 !important;
+  font-size: 1.4rem !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  color: var(--pawly-color-brown) !important;
+  padding: 1rem 1.4rem !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  text-decoration: none !important;
+  border-radius: 0 !important;
+  transition: background-color 150ms var(--pawly-ease), color 150ms var(--pawly-ease);
 }
 
 .menu-drawer__localization .disclosure__link:hover {
-  background: rgba(184, 115, 51, 0.08);
-  color: var(--pawly-color-terracotta);
+  background: rgba(184, 115, 51, 0.08) !important;
+  color: var(--pawly-color-terracotta) !important;
 }
 
 .menu-drawer__localization .disclosure__link[aria-current='true'] {
-  color: var(--pawly-color-terracotta);
-  background: rgba(184, 115, 51, 0.06);
+  color: var(--pawly-color-terracotta) !important;
+  background: transparent !important;
 }
 
 .menu-drawer__localization .disclosure__link .country {
@@ -744,37 +796,41 @@ header-drawer {
   color: var(--pawly-color-terracotta);
 }
 
-/* Submenu : mêmes règles pour cohérence */
+/* Submenu : même fond cream, pas de box */
 .menu-drawer__submenu {
-  background: var(--pawly-color-cream);
+  background: var(--pawly-color-cream) !important;
 }
 
 .menu-drawer__close-button {
-  font-family: var(--font-heading-family);
-  font-weight: 500;
-  font-size: 1.2rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--pawly-color-brown);
-  padding: 1.6rem 2rem;
+  font-family: var(--font-heading-family) !important;
+  font-weight: 500 !important;
+  font-size: 1.2rem !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  color: var(--pawly-color-brown) !important;
+  padding: 1.6rem 2.4rem !important;
   border-bottom: 1px solid rgba(61, 46, 30, 0.08);
-  margin-top: 0;
+  background: transparent !important;
+  margin-top: 0 !important;
 }
 
 .menu-drawer__close-button:hover {
-  color: var(--pawly-color-terracotta);
-  background: rgba(184, 115, 51, 0.05);
+  color: var(--pawly-color-terracotta) !important;
+  background: transparent !important;
 }
 
-/* Social list dans drawer : discret, aligné */
+/* Social list : discret, aligné à gauche */
 .menu-drawer .list-social {
   justify-content: flex-start;
-  margin: 0;
-  padding-top: 0.4rem;
+  padding-top: 0.8rem;
+}
+
+.menu-drawer .list-social:empty {
+  display: none;
 }
 
 .menu-drawer .list-social__link {
-  padding: 0.8rem;
+  padding: 0.8rem 0.8rem 0.8rem 0 !important;
   color: var(--pawly-color-brown);
   transition: color 200ms var(--pawly-ease);
 }
@@ -870,7 +926,6 @@ header-drawer > details[open] > summary > span > svg:nth-of-type(2) {
 .pawly-footer__reassurance-title {
   font-family: var(--font-heading-family);
   font-size: 1.3rem;
-  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--pawly-color-brown);
   margin: 0;
@@ -898,7 +953,6 @@ header-drawer > details[open] > summary > span > svg:nth-of-type(2) {
 .footer-block__heading,
 .footer__list-social .list-social__link {
   font-family: var(--font-heading-family);
-  letter-spacing: 0.12em;
 }
 
 .footer-block__heading {
@@ -950,7 +1004,6 @@ header-drawer > details[open] > summary > span > svg:nth-of-type(2) {
 /* Rich-text intro : chapeau caption éditorial */
 .rich-text__caption {
   font-family: var(--font-heading-family);
-  letter-spacing: 0.18em;
   text-transform: uppercase;
   font-size: 1.2rem;
   color: var(--pawly-color-terracotta);
@@ -992,7 +1045,7 @@ header-drawer > details[open] > summary > span > svg:nth-of-type(2) {
 }
 
 /* Multicolumn avec icône SVG Pawly — harmonise la taille */
-.multicolumn-card__image-wrapper img[src*="pawly-icon-"] {
+.multicolumn-card__image-wrapper img[src*='pawly-icon-'] {
   max-width: 6rem;
   max-height: 6rem;
   margin: 0 auto;
@@ -1032,7 +1085,6 @@ header-drawer > details[open] > summary > span > svg:nth-of-type(2) {
 
 .product-form__input .form__label {
   font-family: var(--font-heading-family);
-  letter-spacing: 0.14em;
   text-transform: uppercase;
   font-size: 1.2rem;
 }
