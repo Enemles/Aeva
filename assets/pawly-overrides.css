@@ -229,6 +229,7 @@ h1, h2, .h1, .h2,
   margin: 0 0 1.2rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -427,7 +428,8 @@ h1, h2, .h1, .h2,
 
 .pawly-header__icon-btn .icon,
 .pawly-header__icon-btn .svg-wrapper,
-.pawly-header__icon-wrap .header__icon .svg-wrapper {
+.pawly-header__icon-wrap .header__icon .svg-wrapper,
+.pawly-header__icon-wrap .header__icon--summary .svg-wrapper {
   width: 2.4rem;
   height: 2.4rem;
 }
@@ -438,6 +440,30 @@ h1, h2, .h1, .h2,
   height: 100%;
   stroke: currentColor;
   fill: none;
+}
+
+/* Search modal summary — Dawn force .header__icon à 4.4rem et .svg-wrapper à 44px,
+   on ramène à notre échelle 3.6rem bouton / 2.4rem icône */
+.pawly-header__icon-wrap .header__icon,
+.pawly-header__icon-wrap .header__icon--summary {
+  width: 3.6rem;
+  height: 3.6rem;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--pawly-color-brown);
+}
+
+.pawly-header__icon-wrap .header__icon:hover,
+.pawly-header__icon-wrap .header__icon--summary:hover {
+  color: var(--pawly-color-terracotta);
+}
+
+.pawly-header__icon-wrap .header__icon > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .pawly-header__cart-count {
