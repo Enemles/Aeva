@@ -1,11 +1,8 @@
 {% comment %}
-  Pawly header — logo centré + nav split gauche/droite.
-  Rewrite du header Dawn pour adopter le layout éditorial magazine.
-  Le schema est conservé pour ne pas casser la preview Shopify admin.
-
-  Split logic : les liens du main-menu sont répartis moitié à gauche / moitié à droite
-  (arrondi supérieur à gauche). Les icônes search/account/cart restent à droite.
-  Mobile : burger + logo centré + cart droite.
+  Pawly header — logo centré, menu à gauche, icônes à droite.
+  Layout éditorial magazine : tous les liens du main-menu sont alignés à gauche,
+  les icônes search/account/cart à droite, le logo reste au centre.
+  Mobile : burger gauche + logo centré + cart droite.
 {% endcomment %}
 
 <link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'">
@@ -43,12 +40,6 @@
   endif
 
   assign menu_links = section.settings.menu.links
-  assign menu_count = menu_links.size
-  assign split_index = menu_count | divided_by: 2
-  assign menu_remainder = menu_count | modulo: 2
-  if menu_remainder != 0
-    assign split_index = split_index | plus: 1
-  endif
 -%}
 
 <{{ header_tag }}
@@ -56,7 +47,7 @@
   class="header-wrapper pawly-header color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}"
 >
   <header class="pawly-header__inner">
-    {%- comment -%} Left zone : mobile burger OR desktop nav left {%- endcomment -%}
+    {%- comment -%} Left zone : mobile burger + all desktop menu links {%- endcomment -%}
     <div class="pawly-header__nav pawly-header__nav--left">
       {%- if section.settings.menu != blank -%}
         {%- render 'header-drawer' -%}
@@ -64,7 +55,7 @@
 
       {%- if menu_links.size > 0 -%}
         <ul class="pawly-header__menu-list small-hide medium-hide" role="list">
-          {%- for link in menu_links limit: split_index -%}
+          {%- for link in menu_links -%}
             <li>
               <a
                 href="{{ link.url }}"
@@ -102,23 +93,8 @@
       {%- if request.page_type == 'index' -%}</h1>{%- endif -%}
     </div>
 
-    {%- comment -%} Right zone : nav right + icons {%- endcomment -%}
+    {%- comment -%} Right zone : icons only (search, account, cart) {%- endcomment -%}
     <div class="pawly-header__nav pawly-header__nav--right">
-      {%- if menu_links.size > split_index -%}
-        <ul class="pawly-header__menu-list small-hide medium-hide" role="list">
-          {%- for link in menu_links offset: split_index -%}
-            <li>
-              <a
-                href="{{ link.url }}"
-                class="pawly-header__link{% if link.active %} pawly-header__link--active{% endif %}"
-              >
-                {{ link.title | escape }}
-              </a>
-            </li>
-          {%- endfor -%}
-        </ul>
-      {%- endif -%}
-
       <div class="pawly-header__icons">
         {%- comment -%} Search {%- endcomment -%}
         <div class="pawly-header__icon-wrap">
