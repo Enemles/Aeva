@@ -58,40 +58,39 @@
    2. TYPOGRAPHIE ÉDITORIALE
    ============================================================ */
 
-/* Headings : letter-spacing négatif pour serrer le Playfair */
+/* Headings : Quicksand est déjà géométrique rond, pas besoin de serrer */
 h1, h2, .h1, .h2,
 .section-header__title,
 .title-wrapper-with-link .title {
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
 }
 
-/* Overline / small caps — langage éditorial pour chapeaux de sections,
-   chips produits, labels univers. Utilise Playfair Display small caps. */
+/* Overline / labels — tracking uppercase pour chapeaux de sections,
+   chips produits, labels univers. Quicksand medium/bold en caps. */
 .pawly-overline,
 .pawly-caption {
   font-family: var(--font-heading-family);
-  font-style: var(--font-heading-style);
-  font-weight: var(--font-heading-weight);
+  font-weight: 600;
   font-size: 1.1rem;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  font-feature-settings: 'smcp';
   line-height: 1;
 }
 
-/* Tagline italique Playfair — pour sous-titres éditoriaux */
+/* Tagline — Quicksand n'a pas d'italique propre, on reste sur le body
+   Assistant en italique (déjà dessiné) pour un contraste doux. */
 .pawly-tagline {
-  font-family: var(--font-heading-family);
+  font-family: var(--font-body-family);
   font-style: italic;
   font-weight: 400;
   color: rgb(var(--color-foreground) / 0.7);
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 /* Hero heading — taille affirmée desktop */
 .banner--large .banner__heading,
 .banner--medium .banner__heading {
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   line-height: 1.05;
 }
 
@@ -195,8 +194,8 @@ h1, h2, .h1, .h2,
   font-style: var(--font-heading-style);
   font-weight: var(--font-heading-weight);
   font-size: calc(2.2rem * var(--font-heading-scale, 1));
-  line-height: 1.1;
-  letter-spacing: -0.01em;
+  line-height: 1.15;
+  letter-spacing: 0;
   margin: 0.8rem 0 0.4rem;
   color: rgb(var(--color-foreground));
 }
@@ -211,11 +210,11 @@ h1, h2, .h1, .h2,
 }
 
 .pawly-card__tagline {
-  font-family: var(--font-heading-family);
+  font-family: var(--font-body-family);
   font-style: italic;
   font-weight: 400;
   font-size: 1.5rem;
-  line-height: 1.4;
+  line-height: 1.5;
   color: rgb(var(--color-foreground) / 0.65);
   margin: 0 0 1.2rem;
   display: -webkit-box;
@@ -613,16 +612,16 @@ header-drawer {
 }
 
 .banner__heading.h0 {
-  font-size: clamp(4rem, 5.5vw, 7rem);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
+  font-size: clamp(4rem, 5.5vw, 6.8rem);
+  line-height: 1.1;
+  letter-spacing: -0.005em;
   margin-bottom: 1.6rem;
 }
 
 .banner__heading.h1 {
   font-size: clamp(3.2rem, 4vw, 5rem);
-  line-height: 1.1;
-  letter-spacing: -0.015em;
+  line-height: 1.15;
+  letter-spacing: 0;
 }
 
 .banner__text {
@@ -643,7 +642,8 @@ header-drawer {
 }
 
 .rich-text__heading {
-  letter-spacing: -0.015em;
+  letter-spacing: 0;
+  line-height: 1.2;
   margin-bottom: 1.6rem;
 }
 
@@ -657,14 +657,15 @@ header-drawer {
 
 /* Multicolumn : titres colonnes plus éditoriaux */
 .multicolumn .title {
-  letter-spacing: -0.015em;
+  letter-spacing: 0;
   margin-bottom: 2.4rem;
 }
 
 .multicolumn-card__info .h3 {
   font-family: var(--font-heading-family);
   font-size: 2rem;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
+  line-height: 1.25;
   margin: 1.6rem 0 0.8rem;
 }
 
@@ -685,8 +686,8 @@ header-drawer {
 .collection-hero__title {
   font-family: var(--font-heading-family);
   font-size: clamp(3.2rem, 4.5vw, 5.5rem);
-  letter-spacing: -0.02em;
-  line-height: 1.1;
+  letter-spacing: -0.005em;
+  line-height: 1.15;
 }
 
 .collection-hero__description {
@@ -703,8 +704,8 @@ header-drawer {
 
 .product__title > * {
   font-family: var(--font-heading-family);
-  letter-spacing: -0.015em;
-  line-height: 1.1;
+  letter-spacing: 0;
+  line-height: 1.15;
 }
 
 .product__text.caption-with-letter-spacing {
@@ -734,13 +735,13 @@ header-drawer {
 
 .drawer__heading {
   font-family: var(--font-heading-family);
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
 }
 
 .cart-drawer__warnings .cart__login-title,
 .cart-drawer__footer .totals__total-value {
   font-family: var(--font-heading-family);
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
 }
 
 .cart-drawer .button,

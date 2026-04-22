@@ -11,7 +11,7 @@
   "current": {
     "logo_width": 90,
     "favicon": "shopify://shop_images/LogoPawly.jpg",
-    "type_header_font": "playfair_display_n4",
+    "type_header_font": "quicksand_n5",
     "heading_scale": 115,
     "type_body_font": "assistant_n4",
     "body_scale": 105,
@@ -261,7 +261,7 @@
           }
         }
       },
-      "type_header_font": "playfair_display_n4",
+      "type_header_font": "quicksand_n5",
       "heading_scale": 110,
       "type_body_font": "assistant_n4",
       "body_scale": 105,
