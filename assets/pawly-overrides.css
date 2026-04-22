@@ -107,29 +107,29 @@ h1, h2, .h1, .h2,
   font-size: 1.3rem;
   padding: 1.4rem 2.6rem;
   min-height: 5rem;
-  border-width: 2px;
+  border: 0;
   transition: background-color var(--pawly-duration-slow) var(--pawly-ease),
               color var(--pawly-duration-slow) var(--pawly-ease),
-              border-color var(--pawly-duration-slow) var(--pawly-ease);
+              opacity 200ms var(--pawly-ease);
 }
 
+/* Primary — terracotta qui s'assombrit doucement au hover, pas d'inversion brutale */
 .button--primary:hover,
 .button:not(.button--tertiary):not(.button--secondary):hover {
-  background-color: rgb(var(--color-foreground));
-  color: rgb(var(--color-background));
-  border-color: rgb(var(--color-foreground));
+  background-color: var(--pawly-color-brown);
+  color: var(--pawly-color-cream);
 }
 
-/* Button secondary — outline épais warm */
+/* Secondary — texte terracotta, pas de bordure, juste un fond warm au hover */
 .button--secondary {
-  border-width: 2px;
+  border: 0;
   background: transparent;
+  color: var(--pawly-color-terracotta);
 }
 
 .button--secondary:hover {
-  background: var(--pawly-color-terracotta);
-  color: var(--pawly-color-cream);
-  border-color: var(--pawly-color-terracotta);
+  background: rgb(184 115 51 / 0.08);
+  color: var(--pawly-color-terracotta);
 }
 
 /* ============================================================
