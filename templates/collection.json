@@ -4,29 +4,175 @@
       "type": "main-collection-banner",
       "settings": {
         "show_collection_description": true,
-        "show_collection_image": false,
+        "show_collection_image": true,
         "color_scheme": "scheme-1"
+      }
+    },
+    "intro": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Notre boutique",
+            "heading_size": "h1"
+          }
+        },
+        "caption": {
+          "type": "caption",
+          "settings": {
+            "caption": "Pensés pour eux",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Chaque produit Pawly est choisi pour apporter du confort, du jeu ou de la stimulation. Pas de bazar, pas de gadget : que des objets pensés pour leur bien-être quotidien, indoor ou outdoor.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "caption",
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 60,
+        "padding_bottom": 40
       }
     },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
         "products_per_page": 16,
-        "columns_desktop": 4,
-        "image_ratio": "adapt",
-        "show_secondary_image": false,
+        "columns_desktop": 2,
+        "image_ratio": "portrait",
+        "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
-        "enable_filtering": true,
-        "enable_sorting": true,
-        "columns_mobile": "2",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "enable_filtering": false,
+        "enable_sorting": false,
+        "columns_mobile": "1",
+        "padding_top": 40,
+        "padding_bottom": 60
+      }
+    },
+    "why_pawly": {
+      "type": "multicolumn",
+      "blocks": {
+        "col_shipping": {
+          "type": "column",
+          "settings": {
+            "image": "",
+            "title": "Livraison rapide",
+            "text": "<p>Commandes traitées sous 1 à 3 jours ouvrés. Livraison estimée 5 à 8 jours ouvrés en Europe.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "col_safe": {
+          "type": "column",
+          "settings": {
+            "image": "",
+            "title": "Matériaux sûrs",
+            "text": "<p>Plastique alimentaire, silicone souple, textiles sans BPA. Testés pour un usage quotidien.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "col_guarantee": {
+          "type": "column",
+          "settings": {
+            "image": "",
+            "title": "Garantie 30 jours",
+            "text": "<p>Un défaut, une casse à l'arrivée ? On remplace sans frais. Une photo suffit — pas besoin de renvoyer.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "col_shipping",
+        "col_safe",
+        "col_guarantee"
+      ],
+      "settings": {
+        "title": "Pourquoi Pawly",
+        "heading_size": "h2",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "final_cta": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Prêt à rejoindre la famille Pawly ?",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "Des produits pensés pour eux, livrés chez toi.",
+            "text_style": "body"
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Découvrir la boutique",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "button"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Final_CTA.webp",
+        "image_overlay_opacity": 40,
+        "image_height": "medium",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-3",
+        "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
       }
     }
   },
   "order": [
     "banner",
-    "product-grid"
+    "intro",
+    "product-grid",
+    "why_pawly",
+    "final_cta"
   ]
 }

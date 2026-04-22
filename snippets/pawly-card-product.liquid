@@ -1,0 +1,146 @@
+{% comment %}
+  Pawly product card — fork éditorial de card-product.liquid.
+  Structure : overline univers (tag indoor/outdoor) + image hover cross-fade
+              + titre Playfair + tagline italique + prix + arrow CTA.
+
+  Accepts:
+  - card_product: {Object} Product Liquid object
+  - media_aspect_ratio: {String} "portrait" (default) ou "square"
+  - show_secondary_image: {Boolean} Cross-fade hover si 2e image dispo. Default: true
+  - section_id: {String} ID de la section (pour aria-labelledby)
+  - placeholder_image: {String} Placeholder si pas de produit. Default: 'product-apparel-2'
+
+  Usage:
+  {% render 'pawly-card-product', card_product: product, section_id: section.id %}
+{% endcomment %}
+
+{%- liquid
+  assign show_hover = show_secondary_image
+  if show_hover == nil
+    assign show_hover = true
+  endif
+
+  assign ratio = 0.8
+  if media_aspect_ratio == 'square'
+    assign ratio = 1
+  elsif media_aspect_ratio == 'adapt' and card_product.featured_media
+    assign ratio = card_product.featured_media.aspect_ratio
+  endif
+  if ratio == 0 or ratio == null
+    assign ratio = 0.8
+  endif
+
+  assign universe_label = nil
+  if card_product.tags contains 'indoor'
+    assign universe_label = 'Indoor — Univers chat'
+  elsif card_product.tags contains 'outdoor'
+    assign universe_label = 'Outdoor — Univers chien'
+  endif
+
+  assign tagline = card_product.metafields.pawly.tagline | default: card_product.metafields.custom.tagline
+  if tagline == blank and card_product.description != blank
+    assign stripped = card_product.description | strip_html | strip
+    assign tagline = stripped | truncatewords: 14
+  endif
+-%}
+
+{%- if card_product and card_product != empty -%}
+  <article class="pawly-card" data-product-id="{{ card_product.id }}">
+    <a
+      href="{{ card_product.url }}"
+      class="pawly-card__media-wrap"
+      aria-labelledby="PawlyCardTitle-{{ section_id }}-{{ card_product.id }}"
+      style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
+    >
+      <div class="media" style="padding-bottom: calc(1 / {{ ratio }} * 100%);">
+        {%- if card_product.available == false -%}
+          <span class="pawly-card__badge">{{ 'products.product.sold_out' | t }}</span>
+        {%- elsif card_product.compare_at_price > card_product.price -%}
+          <span class="pawly-card__badge pawly-card__badge--sale">{{ 'products.product.on_sale' | t }}</span>
+        {%- endif -%}
+
+        {%- if card_product.featured_media -%}
+          <img
+            class="pawly-card__image"
+            srcset="
+              {%- if card_product.featured_media.width >= 360 -%}{{ card_product.featured_media | image_url: width: 360 }} 360w,{%- endif -%}
+              {%- if card_product.featured_media.width >= 533 -%}{{ card_product.featured_media | image_url: width: 533 }} 533w,{%- endif -%}
+              {%- if card_product.featured_media.width >= 720 -%}{{ card_product.featured_media | image_url: width: 720 }} 720w,{%- endif -%}
+              {%- if card_product.featured_media.width >= 940 -%}{{ card_product.featured_media | image_url: width: 940 }} 940w,{%- endif -%}
+              {{ card_product.featured_media | image_url }} {{ card_product.featured_media.width }}w
+            "
+            src="{{ card_product.featured_media | image_url: width: 720 }}"
+            sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 60 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 80px) / 2), calc(100vw - 40px)"
+            alt="{{ card_product.featured_media.alt | default: card_product.title | escape }}"
+            loading="lazy"
+            width="{{ card_product.featured_media.width }}"
+            height="{{ card_product.featured_media.height }}"
+          >
+          {%- if show_hover and card_product.media[1] -%}
+            <img
+              class="pawly-card__image-hover"
+              srcset="
+                {%- if card_product.media[1].width >= 360 -%}{{ card_product.media[1] | image_url: width: 360 }} 360w,{%- endif -%}
+                {%- if card_product.media[1].width >= 533 -%}{{ card_product.media[1] | image_url: width: 533 }} 533w,{%- endif -%}
+                {%- if card_product.media[1].width >= 720 -%}{{ card_product.media[1] | image_url: width: 720 }} 720w,{%- endif -%}
+                {%- if card_product.media[1].width >= 940 -%}{{ card_product.media[1] | image_url: width: 940 }} 940w,{%- endif -%}
+                {{ card_product.media[1] | image_url }} {{ card_product.media[1].width }}w
+              "
+              src="{{ card_product.media[1] | image_url: width: 720 }}"
+              sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 60 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 80px) / 2), calc(100vw - 40px)"
+              alt=""
+              loading="lazy"
+              width="{{ card_product.media[1].width }}"
+              height="{{ card_product.media[1].height }}"
+              aria-hidden="true"
+            >
+          {%- endif -%}
+        {%- else -%}
+          {{ 'product-apparel-2' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+      </div>
+    </a>
+
+    <div class="pawly-card__info">
+      {%- if universe_label -%}
+        <span class="pawly-card__overline">{{ universe_label }}</span>
+      {%- endif -%}
+
+      <h3 class="pawly-card__title" id="PawlyCardTitle-{{ section_id }}-{{ card_product.id }}">
+        <a href="{{ card_product.url }}">{{ card_product.title | escape }}</a>
+      </h3>
+
+      {%- if tagline != blank -%}
+        <p class="pawly-card__tagline">{{ tagline }}</p>
+      {%- endif -%}
+
+      <div class="pawly-card__footer">
+        <div class="pawly-card__price">
+          {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
+        </div>
+        <a href="{{ card_product.url }}" class="pawly-card__cta" aria-label="{{ 'products.product.view_full_details' | t }} — {{ card_product.title | escape }}">
+          <span>{{ 'products.product.view_full_details' | t }}</span>
+          <span class="pawly-card__cta-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </article>
+{%- else -%}
+  <article class="pawly-card pawly-card--placeholder">
+    <div class="pawly-card__media-wrap" style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;">
+      <div class="media" style="padding-bottom: calc(1 / {{ ratio }} * 100%);">
+        {{ 'product-apparel-2' | placeholder_svg_tag: 'placeholder-svg' }}
+      </div>
+    </div>
+    <div class="pawly-card__info">
+      <h3 class="pawly-card__title">
+        <a role="link" aria-disabled="true">{{ 'onboarding.product_title' | t }}</a>
+      </h3>
+      <div class="pawly-card__footer">
+        <div class="pawly-card__price">
+          {% render 'price', placeholder: true, show_compare_at_price: true %}
+        </div>
+      </div>
+    </div>
+  </article>
+{%- endif -%}

@@ -1,0 +1,781 @@
+/*
+ * Pawly overrides — design system sur thème Dawn.
+ * Chargé APRÈS base.css dans theme.liquid (priorité cascade).
+ * Ne pas éditer base.css ni component-*.css natifs Dawn.
+ *
+ * Structure :
+ *    1. Tokens globaux (CSS variables, spacing)
+ *    2. Typographie éditoriale (headings, overlines, small caps)
+ *    3. Boutons CTA
+ *    4. Product cards (pour pawly-card-product.liquid)
+ *    5. Header (logo centré + nav split)
+ *    6. Footer (éditorial + SVG réassurance)
+ *    7. Section headers + hero heading
+ *    8. Product page
+ *    9. Cart drawer
+ *   10. Forms + inputs
+ *   11. Announcement bar
+ */
+
+/* ============================================================
+   1. TOKENS GLOBAUX
+   ============================================================ */
+
+:root {
+  /* Radius — éditorial carré, pas pill */
+  --buttons-radius: 2px;
+  --buttons-radius-outset: 2px;
+  --variant-pills-radius: 2px;
+  --product-card-corner-radius: 0px;
+  --collection-card-corner-radius: 0px;
+  --blog-card-corner-radius: 0px;
+  --media-radius: 0px;
+  --text-boxes-radius: 0px;
+  --popup-corner-radius: 0px;
+  --badge-corner-radius: 2px;
+
+  /* Shadows — neutralisées pour look flat editorial */
+  --buttons-shadow-opacity: 0;
+  --product-card-shadow-opacity: 0;
+  --collection-card-shadow-opacity: 0;
+  --blog-card-shadow-opacity: 0;
+  --variant-pills-shadow-opacity: 0;
+
+  /* Spacing — respiration éditoriale */
+  --spacing-sections-desktop: 60px;
+  --spacing-sections-mobile: 40px;
+
+  /* Custom Pawly tokens */
+  --pawly-color-cream: #faf7f2;
+  --pawly-color-camel: #c4956a;
+  --pawly-color-terracotta: #b87333;
+  --pawly-color-brown: #3d2e1e;
+  --pawly-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --pawly-duration-slow: 600ms;
+}
+
+/* ============================================================
+   2. TYPOGRAPHIE ÉDITORIALE
+   ============================================================ */
+
+/* Headings : letter-spacing négatif pour serrer le Playfair */
+h1, h2, .h1, .h2,
+.section-header__title,
+.title-wrapper-with-link .title {
+  letter-spacing: -0.01em;
+}
+
+/* Overline / small caps — langage éditorial pour chapeaux de sections,
+   chips produits, labels univers. Utilise Playfair Display small caps. */
+.pawly-overline,
+.pawly-caption {
+  font-family: var(--font-heading-family);
+  font-style: var(--font-heading-style);
+  font-weight: var(--font-heading-weight);
+  font-size: 1.1rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-feature-settings: 'smcp';
+  line-height: 1;
+}
+
+/* Tagline italique Playfair — pour sous-titres éditoriaux */
+.pawly-tagline {
+  font-family: var(--font-heading-family);
+  font-style: italic;
+  font-weight: 400;
+  color: rgb(var(--color-foreground) / 0.7);
+  line-height: 1.4;
+}
+
+/* Hero heading — taille affirmée desktop */
+.banner--large .banner__heading,
+.banner--medium .banner__heading {
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+/* ============================================================
+   3. BOUTONS CTA (Phase 6 — style éditorial)
+   ============================================================ */
+
+.button:not(.button--tertiary),
+.shopify-payment-button__button--unbranded {
+  font-family: var(--font-heading-family);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  padding: 1.4rem 2.4rem;
+  min-height: 4.8rem;
+  transition: background-color var(--pawly-duration-slow) var(--pawly-ease),
+              color var(--pawly-duration-slow) var(--pawly-ease);
+}
+
+.button--primary:hover,
+.button:not(.button--tertiary):not(.button--secondary):hover {
+  background-color: rgb(var(--color-foreground));
+  color: rgb(var(--color-background));
+}
+
+/* Button secondary — outline warm */
+.button--secondary {
+  border-width: 1px;
+}
+
+/* ============================================================
+   4. PRODUCT CARDS (Phase 2 — pour pawly-card-product.liquid)
+   ============================================================ */
+
+.pawly-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: transparent;
+}
+
+.pawly-card__media-wrap {
+  position: relative;
+  overflow: hidden;
+  background: rgb(var(--color-background));
+  display: block;
+  text-decoration: none;
+}
+
+.pawly-card__media-wrap .media {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+}
+
+.pawly-card__image,
+.pawly-card__image-hover,
+.pawly-card__media-wrap .media .placeholder-svg {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity var(--pawly-duration-slow) var(--pawly-ease);
+}
+
+.pawly-card__image-hover {
+  opacity: 0;
+}
+
+@media screen and (min-width: 990px) {
+  .pawly-card:hover .pawly-card__image-hover {
+    opacity: 1;
+  }
+  .pawly-card:hover .pawly-card__image {
+    opacity: 0;
+  }
+}
+
+.pawly-card__info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-top: 0.4rem;
+}
+
+.pawly-card__overline {
+  display: inline-block;
+  margin-top: 1.6rem;
+  color: var(--pawly-color-terracotta);
+  font-family: var(--font-heading-family);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+
+.pawly-card__title {
+  font-family: var(--font-heading-family);
+  font-style: var(--font-heading-style);
+  font-weight: var(--font-heading-weight);
+  font-size: calc(2.2rem * var(--font-heading-scale, 1));
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin: 0.8rem 0 0.4rem;
+  color: rgb(var(--color-foreground));
+}
+
+.pawly-card__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.pawly-card__title a:hover {
+  color: var(--pawly-color-terracotta);
+}
+
+.pawly-card__tagline {
+  font-family: var(--font-heading-family);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  color: rgb(var(--color-foreground) / 0.65);
+  margin: 0 0 1.2rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.pawly-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.2rem;
+  margin-top: auto;
+  padding-top: 0.4rem;
+}
+
+.pawly-card__price {
+  font-family: var(--font-body-family);
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: rgb(var(--color-foreground));
+}
+
+.pawly-card__price .price__sale,
+.pawly-card__price .price-item--sale {
+  color: var(--pawly-color-terracotta);
+}
+
+.pawly-card__price .price-item--regular {
+  color: inherit;
+}
+
+.pawly-card__cta {
+  font-family: var(--font-heading-family);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  color: rgb(var(--color-foreground));
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: color var(--pawly-duration-slow) var(--pawly-ease),
+              gap var(--pawly-duration-slow) var(--pawly-ease);
+}
+
+.pawly-card__cta:hover {
+  color: var(--pawly-color-terracotta);
+  gap: 1rem;
+}
+
+.pawly-card__cta-arrow {
+  display: inline-block;
+  transition: transform var(--pawly-duration-slow) var(--pawly-ease);
+}
+
+.pawly-card:hover .pawly-card__cta-arrow {
+  transform: translateX(4px);
+}
+
+.pawly-card__badge {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+  background: rgb(var(--color-background));
+  color: var(--pawly-color-brown);
+  font-family: var(--font-heading-family);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.8rem;
+  border-radius: 2px;
+  z-index: 2;
+}
+
+.pawly-card__badge--sale {
+  background: var(--pawly-color-terracotta);
+  color: var(--pawly-color-cream);
+}
+
+/* ============================================================
+   5. HEADER (Phase 4 — logo centré + nav split)
+   ============================================================ */
+
+.pawly-header {
+  background: rgb(var(--color-background));
+}
+
+.header-wrapper--border-bottom.pawly-header {
+  border-bottom: 1px solid rgb(var(--color-foreground) / 0.08);
+}
+
+.pawly-header__inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 2rem;
+  max-width: var(--page-width);
+  margin: 0 auto;
+}
+
+.pawly-header__nav {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.pawly-header__nav--left {
+  justify-content: flex-start;
+}
+
+.pawly-header__nav--right {
+  justify-content: flex-end;
+}
+
+.pawly-header__menu-list {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pawly-header__menu-list li {
+  margin: 0;
+}
+
+.pawly-header__link {
+  font-family: var(--font-heading-family);
+  font-weight: 500;
+  font-size: 1.2rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--pawly-color-brown);
+  text-decoration: none;
+  transition: color var(--pawly-duration-slow) var(--pawly-ease);
+  line-height: 1;
+  padding: 0.4rem 0;
+  white-space: nowrap;
+}
+
+.pawly-header__link:hover,
+.pawly-header__link--active {
+  color: var(--pawly-color-terracotta);
+}
+
+.pawly-header__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pawly-header__logo .header__heading {
+  margin: 0;
+}
+
+.pawly-header__logo-link {
+  display: inline-flex;
+  text-decoration: none;
+}
+
+.pawly-header__logo-img {
+  display: block;
+  width: auto;
+  max-height: 4.8rem;
+}
+
+.pawly-header__icons {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-left: 2rem;
+}
+
+.pawly-header__icon-wrap .header__icon,
+.pawly-header__icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.6rem;
+  height: 3.6rem;
+  color: var(--pawly-color-brown);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: none;
+  transition: color var(--pawly-duration-slow) var(--pawly-ease);
+  position: relative;
+}
+
+.pawly-header__icon-wrap .header__icon:hover,
+.pawly-header__icon-btn:hover {
+  color: var(--pawly-color-terracotta);
+}
+
+.pawly-header__icon-btn .icon,
+.pawly-header__icon-btn .svg-wrapper,
+.pawly-header__icon-wrap .header__icon .svg-wrapper {
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+.pawly-header__icon-btn .svg-wrapper svg,
+.pawly-header__icon-wrap .header__icon .svg-wrapper svg {
+  width: 100%;
+  height: 100%;
+}
+
+.pawly-header__cart-count {
+  font-family: var(--font-body-family);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--pawly-color-cream);
+  background: var(--pawly-color-terracotta);
+  border-radius: 999px;
+  min-width: 1.8rem;
+  padding: 0 0.5rem;
+  height: 1.8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0.2rem;
+  right: 0;
+  line-height: 1;
+}
+
+/* Mobile burger (header-drawer) — affiche à gauche sur mobile seulement */
+header-drawer {
+  display: none;
+}
+
+@media screen and (max-width: 989px) {
+  header-drawer {
+    display: inline-flex;
+    align-self: center;
+  }
+
+  header-drawer .header__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.6rem;
+    height: 3.6rem;
+    padding: 0;
+    color: var(--pawly-color-brown);
+    background: transparent;
+    border: 0;
+  }
+
+  .pawly-header__inner {
+    grid-template-columns: auto 1fr auto;
+    gap: 1.2rem;
+  }
+
+  .pawly-header__nav--left .pawly-header__menu-list,
+  .pawly-header__nav--right .pawly-header__menu-list {
+    display: none;
+  }
+
+  .pawly-header__logo-img {
+    max-height: 3.6rem;
+  }
+
+  .pawly-header__icons {
+    margin-left: 0;
+    gap: 0.4rem;
+  }
+}
+
+/* Mobile drawer menu — réutilise menu-drawer Dawn natif */
+.menu-drawer__navigation-container {
+  font-family: var(--font-heading-family);
+}
+
+.menu-drawer__menu-item {
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Search modal — garde la cohérence visuelle */
+.pawly-header__icon-wrap details-modal {
+  display: inline-flex;
+}
+
+.pawly-header__icon-wrap .header__icon--search .svg-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================================
+   6. FOOTER (Phase 5 — éditorial + SVG réassurance)
+   ============================================================ */
+
+.pawly-footer__reassurance {
+  padding: 4rem 2rem;
+  background: rgb(var(--color-background));
+  border-bottom: 1px solid rgb(var(--color-foreground) / 0.08);
+}
+
+.pawly-footer__reassurance-row {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  align-items: start;
+}
+
+.pawly-footer__reassurance-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.pawly-footer__reassurance-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+}
+
+.pawly-footer__reassurance-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.pawly-footer__reassurance-title {
+  font-family: var(--font-heading-family);
+  font-size: 1.3rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--pawly-color-brown);
+  margin: 0;
+}
+
+.pawly-footer__reassurance-desc {
+  font-family: var(--font-body-family);
+  font-size: 1.4rem;
+  color: rgb(var(--color-foreground) / 0.7);
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 749px) {
+  .pawly-footer__reassurance-row {
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+  }
+  .pawly-footer__reassurance {
+    padding: 3rem 2rem;
+  }
+}
+
+/* Footer column headings — typo éditoriale */
+.footer-block__heading,
+.footer__list-social .list-social__link {
+  font-family: var(--font-heading-family);
+  letter-spacing: 0.12em;
+}
+
+.footer-block__heading {
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+/* Payment icons — plus discrets */
+.footer__payment {
+  opacity: 0.55;
+  filter: grayscale(100%);
+}
+
+.footer__payment:hover {
+  opacity: 0.85;
+}
+
+/* ============================================================
+   7. SECTION HEADERS + HERO HEADING (Phase 6)
+   ============================================================ */
+
+/* Hero image-banner — taille affirmée */
+.banner--large:not(.banner--mobile-bottom) .banner__content,
+.banner--medium:not(.banner--mobile-bottom) .banner__content {
+  padding-block: 6rem;
+}
+
+.banner__heading.h0 {
+  font-size: clamp(4rem, 5.5vw, 7rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.6rem;
+}
+
+.banner__heading.h1 {
+  font-size: clamp(3.2rem, 4vw, 5rem);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+
+.banner__text {
+  font-size: 1.7rem;
+  line-height: 1.5;
+  max-width: 52ch;
+  margin: 0 auto 2.4rem;
+}
+
+/* Rich-text intro : chapeau caption éditorial */
+.rich-text__caption {
+  font-family: var(--font-heading-family);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  color: var(--pawly-color-terracotta);
+  margin-bottom: 0.8rem;
+}
+
+.rich-text__heading {
+  letter-spacing: -0.015em;
+  margin-bottom: 1.6rem;
+}
+
+.rich-text__text {
+  max-width: 56ch;
+  margin: 0 auto;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: rgb(var(--color-foreground) / 0.8);
+}
+
+/* Multicolumn : titres colonnes plus éditoriaux */
+.multicolumn .title {
+  letter-spacing: -0.015em;
+  margin-bottom: 2.4rem;
+}
+
+.multicolumn-card__info .h3 {
+  font-family: var(--font-heading-family);
+  font-size: 2rem;
+  letter-spacing: -0.01em;
+  margin: 1.6rem 0 0.8rem;
+}
+
+.multicolumn-card__info .rte {
+  color: rgb(var(--color-foreground) / 0.75);
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+
+/* Multicolumn avec icône SVG Pawly — harmonise la taille */
+.multicolumn-card__image-wrapper img[src*="pawly-icon-"] {
+  max-width: 6rem;
+  max-height: 6rem;
+  margin: 0 auto;
+}
+
+/* Main collection banner — présence éditoriale */
+.collection-hero__title {
+  font-family: var(--font-heading-family);
+  font-size: clamp(3.2rem, 4.5vw, 5.5rem);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.collection-hero__description {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  max-width: 56ch;
+  margin: 1.6rem auto 0;
+  color: rgb(var(--color-foreground) / 0.75);
+}
+
+/* ============================================================
+   8. PRODUCT PAGE (main-product) — cohérence éditoriale
+   ============================================================ */
+
+.product__title > * {
+  font-family: var(--font-heading-family);
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+}
+
+.product__text.caption-with-letter-spacing {
+  font-family: var(--font-heading-family);
+  letter-spacing: 0.18em;
+  color: var(--pawly-color-terracotta);
+}
+
+.product-form__input .form__label {
+  font-family: var(--font-heading-family);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+/* Variant pills — cohérence carré */
+.product-form__input--pill input[type='radio'] + label {
+  border-radius: 2px;
+  font-family: var(--font-body-family);
+  letter-spacing: 0.04em;
+  min-width: 4.8rem;
+}
+
+/* ============================================================
+   9. CART DRAWER — cohérence boutons + typo
+   ============================================================ */
+
+.drawer__heading {
+  font-family: var(--font-heading-family);
+  letter-spacing: -0.01em;
+}
+
+.cart-drawer__warnings .cart__login-title,
+.cart-drawer__footer .totals__total-value {
+  font-family: var(--font-heading-family);
+  letter-spacing: -0.01em;
+}
+
+.cart-drawer .button,
+.cart__checkout-button {
+  font-family: var(--font-heading-family);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+/* ============================================================
+   10. FORMS + INPUTS — cohérence
+   ============================================================ */
+
+.field__input,
+input[type='text'],
+input[type='email'],
+textarea {
+  font-family: var(--font-body-family);
+}
+
+.field__label {
+  font-family: var(--font-heading-family);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+
+/* ============================================================
+   11. ANNOUNCEMENT BAR — typo éditoriale
+   ============================================================ */
+
+.announcement-bar__message {
+  font-family: var(--font-heading-family);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
