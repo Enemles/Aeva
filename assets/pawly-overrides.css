@@ -293,10 +293,19 @@ h2,
   transform: translateX(4px);
 }
 
-.pawly-card__badge {
-  position: absolute;
-  top: 1.2rem;
-  left: 1.2rem;
+/* Badge produit : contraint en position absolue top-left avec taille auto.
+   !important nécessaire pour battre la règle Dawn `.media > *:not(.zoom)...`
+   qui force width/height: 100% sur tous les enfants directs de .media
+   (le badge est un enfant direct pour rester sur l'image même au hover). */
+.pawly-card .pawly-card__badge {
+  position: absolute !important;
+  top: 1.2rem !important;
+  left: 1.2rem !important;
+  right: auto !important;
+  bottom: auto !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: calc(100% - 2.4rem);
   background: rgb(var(--color-background));
   color: var(--pawly-color-brown);
   font-family: var(--font-heading-family);
@@ -307,6 +316,7 @@ h2,
   padding: 0.4rem 0.8rem;
   border-radius: 2px;
   z-index: 2;
+  display: inline-block;
 }
 
 .pawly-card__badge--sale {
