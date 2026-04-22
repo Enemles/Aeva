@@ -1,15 +1,14 @@
 {% if cart == empty %}
-  <span class="svg-wrapper">{{ 'icon-cart-empty.svg' | inline_asset_content }}</span>
+  <span class="svg-wrapper icon">{{ 'pawly-icon-bag.svg' | inline_asset_content }}</span>
 {% else %}
-  <span class="svg-wrapper">{{ 'icon-cart.svg' | inline_asset_content }}</span>
+  <span class="svg-wrapper icon">{{ 'pawly-icon-bag.svg' | inline_asset_content }}</span>
 {% endif %}
 
-<span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
 {%- if cart != empty -%}
-  <div class="cart-count-bubble">
-    {%- if cart.item_count < 100 -%}
-      <span aria-hidden="true">{{ cart.item_count }}</span>
-    {%- endif -%}
-    <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
-  </div>
+  <span class="pawly-header__cart-count" aria-hidden="true">
+    {%- if cart.item_count < 100 -%}{{ cart.item_count }}{%- endif -%}
+  </span>
+  <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+{%- else -%}
+  <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
 {%- endif -%}
