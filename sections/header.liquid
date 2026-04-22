@@ -45,7 +45,8 @@
   assign menu_links = section.settings.menu.links
   assign menu_count = menu_links.size
   assign split_index = menu_count | divided_by: 2
-  if menu_count | modulo: 2 != 0
+  assign menu_remainder = menu_count | modulo: 2
+  if menu_remainder != 0
     assign split_index = split_index | plus: 1
   endif
 -%}
