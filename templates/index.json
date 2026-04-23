@@ -44,8 +44,8 @@
         "button"
       ],
       "settings": {
-        "image": "shopify://shop_images/Homepage_Hero.webp",
-        "image_overlay_opacity": 40,
+        "image": "shopify://shop_images/hero-v1-_00001.png",
+        "image_overlay_opacity": 0,
         "image_height": "large",
         "image_behavior": "none",
         "desktop_content_position": "middle-center",
@@ -97,7 +97,7 @@
             "title": "Pawly Ball — pour ton chat",
             "text": "<p>La balle auto-mobile qui garde ton chat d'intérieur stimulé pendant des heures. Mouvements imprévisibles, capteurs intelligents, zéro télécommande.</p>",
             "link_label": "Voir la Pawly Ball",
-            "link": "shopify://products/new-cat-interactive-ball-toy-automatic-rolling-cat-ball-rechargeable-smart-kitten-interactive-toy-intelligent-balls-toy-for-cat"
+            "link": "shopify://products/pawly-ball-balle-interactive-chat"
           }
         },
         "card_water_bowl": {
