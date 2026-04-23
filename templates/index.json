@@ -45,7 +45,7 @@
       ],
       "settings": {
         "image": "shopify://shop_images/Homepage_Hero.webp",
-        "image_overlay_opacity": 0,
+        "image_overlay_opacity": 40,
         "image_height": "large",
         "image_behavior": "none",
         "desktop_content_position": "middle-center",
@@ -120,8 +120,8 @@
         "heading_size": "h2",
         "image_width": "full",
         "image_ratio": "adapt",
-        "button_label": "",
-        "button_link": "",
+        "button_label": "Voir toute la boutique",
+        "button_link": "shopify://collections/all",
         "columns_desktop": 2,
         "column_alignment": "center",
         "background_style": "primary",
@@ -251,12 +251,12 @@
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Voir tous nos produits",
+            "button_label_1": "Voir toute la boutique Pawly",
             "button_link_1": "shopify://collections/all",
             "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "button_label_2": "Qui est Pawly ?",
+            "button_link_2": "shopify://pages/about-pawly",
+            "button_style_secondary_2": true
           }
         }
       },
