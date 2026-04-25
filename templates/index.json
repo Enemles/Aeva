@@ -44,15 +44,15 @@
         "button"
       ],
       "settings": {
-        "image": "shopify://shop_images/hero-v1-_00001.png",
-        "image_mobile": "",
+        "image": "shopify://shop_images/hero-v3-overhead-_00001.png",
         "image_overlay_opacity": 0,
         "image_height": "large",
-        "image_behavior": "none",
+        "image_behavior": "ambient",
         "desktop_content_position": "middle-center",
         "desktop_content_alignment": "center",
         "show_text_box": false,
         "color_scheme": "scheme-3",
+        "image_mobile": "shopify://shop_images/hero-v1-wide-_00002.png",
         "stack_images_on_mobile": false,
         "mobile_content_alignment": "center",
         "show_text_below": false
@@ -267,7 +267,6 @@
       ],
       "settings": {
         "image": "shopify://shop_images/Final_CTA.webp",
-        "image_mobile": "",
         "image_overlay_opacity": 40,
         "image_height": "medium",
         "image_behavior": "none",
