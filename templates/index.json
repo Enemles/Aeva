@@ -45,6 +45,7 @@
       ],
       "settings": {
         "image": "shopify://shop_images/hero-v1-_00001.png",
+        "image_mobile": "",
         "image_overlay_opacity": 0,
         "image_height": "large",
         "image_behavior": "none",
@@ -266,6 +267,7 @@
       ],
       "settings": {
         "image": "shopify://shop_images/Final_CTA.webp",
+        "image_mobile": "",
         "image_overlay_opacity": 40,
         "image_height": "medium",
         "image_behavior": "none",
