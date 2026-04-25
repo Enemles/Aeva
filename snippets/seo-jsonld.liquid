@@ -78,14 +78,16 @@
       "availability": "{%- if product.available -%}https://schema.org/InStock{%- else -%}https://schema.org/OutOfStock{%- endif -%}",
       "itemCondition": "https://schema.org/NewCondition"
     }
-    {%- assign jm_rating = product.metafields.reviews.rating.value -%}
+    {%- assign jm_rating_obj = product.metafields.reviews.rating.value -%}
     {%- assign jm_count = product.metafields.reviews.rating_count.value | default: 0 | plus: 0 -%}
-    {%- if jm_rating != blank and jm_count > 0 -%}
+    {%- if jm_rating_obj != blank and jm_count > 0 -%}
+      {%- assign jm_rating_value = jm_rating_obj.rating | default: jm_rating_obj -%}
+      {%- assign jm_rating_max = jm_rating_obj.scale_max | default: 5 -%}
     , "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "{{ jm_rating }}",
+      "ratingValue": "{{ jm_rating_value }}",
       "reviewCount": "{{ jm_count }}",
-      "bestRating": "5",
+      "bestRating": "{{ jm_rating_max }}",
       "worstRating": "1"
     }
     {%- endif -%}
