@@ -37,6 +37,24 @@
     if value.available
       assign option_disabled = false
     endif
+
+    assign savings_badge = nil
+    if option.position == 1
+      assign matching_variant = product.variants | where: 'option1', value | first
+    elsif option.position == 2
+      assign matching_variant = product.variants | where: 'option2', value | first
+    elsif option.position == 3
+      assign matching_variant = product.variants | where: 'option3', value | first
+    endif
+    if matching_variant.compare_at_price > matching_variant.price
+      assign discount_amount = matching_variant.compare_at_price | minus: matching_variant.price
+      assign discount_pct = discount_amount | times: 100.0 | divided_by: matching_variant.compare_at_price | round
+      capture savings_badge
+        echo '<span class="variant-pill__savings" aria-hidden="true">-'
+        echo discount_pct
+        echo '%</span>'
+      endcapture
+    endif
   -%}
 
   {%- capture input_id -%}
@@ -96,6 +114,7 @@
     >
     <label for="{{ input_id }}">
       {{ value -}}
+      {{ savings_badge }}
       {{ label_unavailable }}
     </label>
   {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}
