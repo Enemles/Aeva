@@ -926,6 +926,39 @@
           "default": true
         },
         {
+          "type": "textarea",
+          "id": "bundle_colors_csv",
+          "label": "Couleurs disponibles (séparées par virgule)",
+          "info": "Injectées comme propriétés de ligne sur les cards packs. Laisser vide pour désactiver.",
+          "default": "Verte, Rouge, Grise"
+        },
+        {
+          "type": "text",
+          "id": "bundle_color_label",
+          "label": "Libellé du sélecteur de couleur",
+          "default": "Couleur"
+        },
+        {
+          "type": "textarea",
+          "id": "bundle_grouped_titles_csv",
+          "label": "Values Shopify à grouper sous une card unique",
+          "info": "Liste séparée par virgule. Ex : Verte, Rouge, Grise → une seule card « 1 balle » avec un select qui choisit le variant Shopify.",
+          "default": "Verte, Rouge, Grise"
+        },
+        {
+          "type": "text",
+          "id": "bundle_grouped_card_label",
+          "label": "Titre de la card groupée",
+          "default": "1 balle"
+        },
+        {
+          "type": "text",
+          "id": "bundle_pack_sizes_csv",
+          "label": "Taille de chaque card (nombre de balles)",
+          "info": "Une valeur par card dans l'ordre d'apparition (card groupée incluse). Ex : 1,2,3",
+          "default": "1,2,3"
+        },
+        {
           "id": "swatch_shape",
           "label": "t:sections.main-product.blocks.variant_picker.settings.swatch_shape.label",
           "type": "select",

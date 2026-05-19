@@ -1,19 +1,13 @@
 {% comment %}
-  Renders bundle-style variant cards (image + title + subtext + price + compare price).
+  Renders bundle-style variant cards.
+  - "Grouped" option values (e.g. colors) collapse into one card with a native
+    Shopify variant selector inside (changing the select swaps which radio is
+    checked).
+  - Standalone values render as their own card, with optional color line item
+    properties (one select per "ball" in the pack).
 
   Accepts:
-  - product: {Object} product object
-  - option: {Object} current product_option object
-  - block: {Object} block object (bundle_* settings live here)
-  - product_form_id: {String} id of the associated product form
-
-  Usage:
-  {% render 'product-variant-bundle-card',
-    product: product,
-    option: option,
-    block: block,
-    product_form_id: product_form_id
-  %}
+  - product, option, block, product_form_id
 {% endcomment %}
 
 {%- liquid
@@ -21,115 +15,360 @@
   assign popular_label = block.settings.bundle_popular_label
   assign subtext_default = block.settings.bundle_subtext_default
   assign show_multiplier = block.settings.bundle_show_multiplier
+  assign colors_csv = block.settings.bundle_colors_csv
+  assign color_label = block.settings.bundle_color_label
+  assign grouped_csv = block.settings.bundle_grouped_titles_csv
+  assign grouped_card_label = block.settings.bundle_grouped_card_label | default: '1 balle'
+  assign pack_sizes_csv = block.settings.bundle_pack_sizes_csv | default: '1,2,3'
+
+  assign all_colors_raw = colors_csv | split: ','
+  assign grouped_titles_raw = grouped_csv | split: ','
+  assign pack_sizes_raw = pack_sizes_csv | split: ','
 -%}
 
-<div class="bundle-cards" role="presentation">
+<div class="bundle-cards" data-bundle-cards>
+  {%- assign grouped_rendered = false -%}
+  {%- assign card_index = 0 -%}
+
   {%- for value in option.values -%}
-    {%- liquid
-      if option.position == 1
-        assign matching_variant = product.variants | where: 'option1', value | first
-      elsif option.position == 2
-        assign matching_variant = product.variants | where: 'option2', value | first
-      else
-        assign matching_variant = product.variants | where: 'option3', value | first
-      endif
+    {%- comment -%} Determine if this value is part of the grouped card {%- endcomment -%}
+    {%- assign is_grouped = false -%}
+    {%- for t in grouped_titles_raw -%}
+      {%- assign tc = t | strip -%}
+      {%- if tc != '' and value == tc -%}
+        {%- assign is_grouped = true -%}
+      {%- endif -%}
+    {%- endfor -%}
 
-      assign option_disabled = true
-      if value.available
-        assign option_disabled = false
-      endif
+    {%- if is_grouped -%}
+      {%- comment -%} Render the grouped card once, on the first match {%- endcomment -%}
+      {%- if grouped_rendered == false -%}
+        {%- assign grouped_rendered = true -%}
+        {%- assign card_index = card_index | plus: 1 -%}
 
-      assign discount_pct = 0
-      if matching_variant.compare_at_price > matching_variant.price
-        assign discount_amount = matching_variant.compare_at_price | minus: matching_variant.price
-        assign discount_pct = discount_amount | times: 100.0 | divided_by: matching_variant.compare_at_price | round
-      endif
+        {%- comment -%} Collect matching variants for pricing + radios {%- endcomment -%}
+        {%- assign group_first_variant = nil -%}
+        {%- assign group_any_selected = false -%}
+        {%- for v2 in option.values -%}
+          {%- assign v2_grouped = false -%}
+          {%- for t in grouped_titles_raw -%}
+            {%- assign tc = t | strip -%}
+            {%- if tc != '' and v2 == tc -%}{%- assign v2_grouped = true -%}{%- endif -%}
+          {%- endfor -%}
+          {%- if v2_grouped -%}
+            {%- if option.position == 1 -%}
+              {%- assign mv = product.variants | where: 'option1', v2 | first -%}
+            {%- elsif option.position == 2 -%}
+              {%- assign mv = product.variants | where: 'option2', v2 | first -%}
+            {%- else -%}
+              {%- assign mv = product.variants | where: 'option3', v2 | first -%}
+            {%- endif -%}
+            {%- if group_first_variant == nil -%}
+              {%- assign group_first_variant = mv -%}
+            {%- endif -%}
+            {%- if v2.selected -%}
+              {%- assign group_any_selected = true -%}
+              {%- assign group_first_variant = mv -%}
+            {%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
 
-      assign subtext = subtext_default
-      if discount_pct > 0
-        assign subtext = 'Économisez ' | append: discount_pct | append: '%'
-      endif
+        {%- assign discount_pct = 0 -%}
+        {%- if group_first_variant.compare_at_price > group_first_variant.price -%}
+          {%- assign discount_amount = group_first_variant.compare_at_price | minus: group_first_variant.price -%}
+          {%- assign discount_pct = discount_amount | times: 100.0 | divided_by: group_first_variant.compare_at_price | round -%}
+        {%- endif -%}
+        {%- assign subtext = subtext_default -%}
+        {%- if discount_pct > 0 -%}
+          {%- assign subtext = 'Économisez ' | append: discount_pct | append: '%' -%}
+        {%- endif -%}
 
-      assign is_popular = false
-      if popular_position > 0 and forloop.index == popular_position
-        assign is_popular = true
-      endif
+        {%- assign is_popular = false -%}
+        {%- if popular_position > 0 and card_index == popular_position -%}
+          {%- assign is_popular = true -%}
+        {%- endif -%}
 
-      assign card_image = matching_variant.featured_media
-      if card_image == blank
-        assign card_image = product.featured_media
-      endif
+        {%- assign card_image = group_first_variant.featured_media | default: product.featured_media -%}
+        {%- assign card_size_str = pack_sizes_raw[card_index | minus: 1] | default: '1' -%}
+        {%- assign card_size = card_size_str | strip | times: 1 -%}
 
-      assign multiplier = forloop.index
-    -%}
+        <div
+          class="bundle-card-row{% if group_any_selected %} is-active{% endif %}"
+          data-bundle-row
+          data-bundle-grouped
+        >
+          {%- comment -%} Hidden radios for each grouped Shopify variant {%- endcomment -%}
+          {%- for v2 in option.values -%}
+            {%- assign v2_grouped = false -%}
+            {%- for t in grouped_titles_raw -%}
+              {%- assign tc = t | strip -%}
+              {%- if tc != '' and v2 == tc -%}{%- assign v2_grouped = true -%}{%- endif -%}
+            {%- endfor -%}
+            {%- if v2_grouped -%}
+              {%- assign v2_disabled = true -%}
+              {%- if v2.available -%}{%- assign v2_disabled = false -%}{%- endif -%}
+              {%- capture v2_input_id -%}{{ section.id }}-{{ option.position }}-g-{{ forloop.index0 }}{%- endcapture -%}
+              <input
+                type="radio"
+                class="bundle-card__input{% if v2_disabled %} disabled{% endif %}"
+                id="{{ v2_input_id }}"
+                name="{{ option.name }}-{{ option.position }}"
+                value="{{ v2 | escape }}"
+                form="{{ product_form_id }}"
+                data-product-url="{{ v2.product_url }}"
+                data-option-value-id="{{ v2.id }}"
+                {% if v2.selected %}checked{% endif %}
+              >
+            {%- endif -%}
+          {%- endfor -%}
 
-    {%- capture input_id -%}
-      {{ section.id }}-{{ option.position }}-{{ forloop.index0 }}
-    {%- endcapture -%}
+          <div
+            class="bundle-card{% if is_popular %} bundle-card--popular{% endif %}"
+            role="button"
+            tabindex="0"
+            data-bundle-grouped-card
+          >
+            {%- if is_popular and popular_label != blank -%}
+              <span class="bundle-card__flag">{{ popular_label }}</span>
+            {%- endif -%}
 
-    {%- capture input_name -%}
-      {{ option.name }}-{{ option.position }}
-    {%- endcapture -%}
+            <div class="bundle-card__media">
+              {%- if card_image -%}
+                {{
+                  card_image
+                  | image_url: width: 200
+                  | image_tag:
+                    loading: 'lazy',
+                    width: card_image.width,
+                    height: card_image.height,
+                    class: 'bundle-card__img',
+                    alt: card_image.alt | default: product.title | escape
+                }}
+              {%- endif -%}
+              {%- if show_multiplier and card_size > 1 -%}
+                <span class="bundle-card__multiplier" aria-hidden="true">x{{ card_size }}</span>
+              {%- endif -%}
+            </div>
 
-    {%- assign escaped_value = value | escape -%}
+            <div class="bundle-card__body">
+              <span class="bundle-card__title">{{ grouped_card_label }}</span>
+              {%- if subtext != blank -%}
+                <span class="bundle-card__subtext">{{ subtext }}</span>
+              {%- endif -%}
+            </div>
 
-    <input
-      type="radio"
-      class="bundle-card__input{% if option_disabled %} disabled{% endif %}"
-      id="{{ input_id }}"
-      name="{{ input_name | escape }}"
-      value="{{ escaped_value }}"
-      form="{{ product_form_id }}"
-      data-product-url="{{ value.product_url }}"
-      data-option-value-id="{{ value.id }}"
-      {% if value.selected %}
-        checked
-      {% endif %}
-    >
-    <label class="bundle-card{% if is_popular %} bundle-card--popular{% endif %}" for="{{ input_id }}">
-      {%- if is_popular and popular_label != blank -%}
-        <span class="bundle-card__flag">{{ popular_label }}</span>
+            <div class="bundle-card__pricing">
+              <span class="bundle-card__price">{{ group_first_variant.price | money }}</span>
+              {%- if group_first_variant.compare_at_price > group_first_variant.price -%}
+                <span class="bundle-card__compare">{{ group_first_variant.compare_at_price | money }}</span>
+              {%- endif -%}
+            </div>
+          </div>
+
+          <div class="bundle-card__colors">
+            <label class="bundle-card__color-row">
+              <span class="bundle-card__color-label">{{ color_label }}</span>
+              <select class="bundle-card__color-select" data-grouped-color-select>
+                {%- for v2 in option.values -%}
+                  {%- assign v2_grouped = false -%}
+                  {%- for t in grouped_titles_raw -%}
+                    {%- assign tc = t | strip -%}
+                    {%- if tc != '' and v2 == tc -%}{%- assign v2_grouped = true -%}{%- endif -%}
+                  {%- endfor -%}
+                  {%- if v2_grouped -%}
+                    <option value="{{ v2 | escape }}"{% if v2.selected %} selected{% endif %}>{{ v2 }}</option>
+                  {%- endif -%}
+                {%- endfor -%}
+              </select>
+            </label>
+          </div>
+        </div>
+      {%- endif -%}
+    {%- else -%}
+      {%- comment -%} Standalone card for a non-grouped variant value {%- endcomment -%}
+      {%- assign card_index = card_index | plus: 1 -%}
+
+      {%- if option.position == 1 -%}
+        {%- assign matching_variant = product.variants | where: 'option1', value | first -%}
+      {%- elsif option.position == 2 -%}
+        {%- assign matching_variant = product.variants | where: 'option2', value | first -%}
+      {%- else -%}
+        {%- assign matching_variant = product.variants | where: 'option3', value | first -%}
       {%- endif -%}
 
-      <div class="bundle-card__media">
-        {%- if card_image -%}
-          {{
-            card_image
-            | image_url: width: 200
-            | image_tag:
-              loading: 'lazy',
-              width: card_image.width,
-              height: card_image.height,
-              class: 'bundle-card__img',
-              alt: card_image.alt | default: product.title | escape
-          }}
-        {%- else -%}
-          <div class="bundle-card__img bundle-card__img--placeholder">
-            {{ 'product-1' | placeholder_svg_tag }}
+      {%- assign option_disabled = true -%}
+      {%- if value.available -%}{%- assign option_disabled = false -%}{%- endif -%}
+
+      {%- assign discount_pct = 0 -%}
+      {%- if matching_variant.compare_at_price > matching_variant.price -%}
+        {%- assign discount_amount = matching_variant.compare_at_price | minus: matching_variant.price -%}
+        {%- assign discount_pct = discount_amount | times: 100.0 | divided_by: matching_variant.compare_at_price | round -%}
+      {%- endif -%}
+      {%- assign subtext = subtext_default -%}
+      {%- if discount_pct > 0 -%}
+        {%- assign subtext = 'Économisez ' | append: discount_pct | append: '%' -%}
+      {%- endif -%}
+
+      {%- assign is_popular = false -%}
+      {%- if popular_position > 0 and card_index == popular_position -%}
+        {%- assign is_popular = true -%}
+      {%- endif -%}
+
+      {%- assign card_image = matching_variant.featured_media | default: product.featured_media -%}
+      {%- assign card_size_str = pack_sizes_raw[card_index | minus: 1] | default: '1' -%}
+      {%- assign card_size = card_size_str | strip | times: 1 -%}
+
+      {%- capture input_id -%}{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}{%- endcapture -%}
+
+      <div class="bundle-card-row{% if value.selected %} is-active{% endif %}" data-bundle-row>
+        <input
+          type="radio"
+          class="bundle-card__input{% if option_disabled %} disabled{% endif %}"
+          id="{{ input_id }}"
+          name="{{ option.name }}-{{ option.position }}"
+          value="{{ value | escape }}"
+          form="{{ product_form_id }}"
+          data-product-url="{{ value.product_url }}"
+          data-option-value-id="{{ value.id }}"
+          {% if value.selected %}checked{% endif %}
+        >
+        <label class="bundle-card{% if is_popular %} bundle-card--popular{% endif %}" for="{{ input_id }}">
+          {%- if is_popular and popular_label != blank -%}
+            <span class="bundle-card__flag">{{ popular_label }}</span>
+          {%- endif -%}
+
+          <div class="bundle-card__media">
+            {%- if card_image -%}
+              {{
+                card_image
+                | image_url: width: 200
+                | image_tag:
+                  loading: 'lazy',
+                  width: card_image.width,
+                  height: card_image.height,
+                  class: 'bundle-card__img',
+                  alt: card_image.alt | default: product.title | escape
+              }}
+            {%- endif -%}
+            {%- if show_multiplier and card_size > 1 -%}
+              <span class="bundle-card__multiplier" aria-hidden="true">x{{ card_size }}</span>
+            {%- endif -%}
+          </div>
+
+          <div class="bundle-card__body">
+            <span class="bundle-card__title">{{ value }}</span>
+            {%- if subtext != blank -%}
+              <span class="bundle-card__subtext">{{ subtext }}</span>
+            {%- endif -%}
+          </div>
+
+          <div class="bundle-card__pricing">
+            <span class="bundle-card__price">{{ matching_variant.price | money }}</span>
+            {%- if matching_variant.compare_at_price > matching_variant.price -%}
+              <span class="bundle-card__compare">{{ matching_variant.compare_at_price | money }}</span>
+            {%- endif -%}
+          </div>
+
+          <span class="visually-hidden label-unavailable">
+            {{- 'products.product.variant_sold_out_or_unavailable' | t -}}
+          </span>
+        </label>
+
+        {%- if all_colors_raw.size > 0 and color_label != blank and card_size > 0 -%}
+          <div class="bundle-card__colors">
+            {%- for i in (1..card_size) -%}
+              {%- if card_size > 1 -%}
+                {%- capture prop_name -%}{{ color_label }} balle {{ i }}{%- endcapture -%}
+                {%- capture row_label -%}Balle {{ i }}{%- endcapture -%}
+              {%- else -%}
+                {%- capture prop_name -%}{{ color_label }}{%- endcapture -%}
+                {%- capture row_label -%}{{ color_label }}{%- endcapture -%}
+              {%- endif -%}
+              <label class="bundle-card__color-row">
+                <span class="bundle-card__color-label">{{ row_label }}</span>
+                <select
+                  class="bundle-card__color-select"
+                  name="properties[{{ prop_name }}]"
+                  form="{{ product_form_id }}"
+                  data-bundle-color
+                  {% unless value.selected %}disabled{% endunless %}
+                >
+                  {%- for color in all_colors_raw -%}
+                    {%- assign color_clean = color | strip -%}
+                    {%- if color_clean != '' -%}
+                      <option value="{{ color_clean | escape }}">{{ color_clean }}</option>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </select>
+              </label>
+            {%- endfor -%}
           </div>
         {%- endif -%}
-        {%- if show_multiplier and multiplier > 1 -%}
-          <span class="bundle-card__multiplier" aria-hidden="true">x{{ multiplier }}</span>
-        {%- endif -%}
       </div>
-
-      <div class="bundle-card__body">
-        <span class="bundle-card__title">{{ value }}</span>
-        {%- if subtext != blank -%}
-          <span class="bundle-card__subtext">{{ subtext }}</span>
-        {%- endif -%}
-      </div>
-
-      <div class="bundle-card__pricing">
-        <span class="bundle-card__price">{{ matching_variant.price | money }}</span>
-        {%- if matching_variant.compare_at_price > matching_variant.price -%}
-          <span class="bundle-card__compare">{{ matching_variant.compare_at_price | money }}</span>
-        {%- endif -%}
-      </div>
-
-      <span class="visually-hidden label-unavailable">
-        {{- 'products.product.variant_sold_out_or_unavailable' | t -}}
-      </span>
-    </label>
+    {%- endif -%}
   {%- endfor -%}
 </div>
+
+<script>
+  (function () {
+    document.querySelectorAll('[data-bundle-cards]').forEach(function (root) {
+      function findRadioByValue(row, val) {
+        return Array.from(row.querySelectorAll('.bundle-card__input')).find(function (r) {
+          return r.value === val;
+        });
+      }
+
+      function sync() {
+        root.querySelectorAll('[data-bundle-row]').forEach(function (row) {
+          var radios = row.querySelectorAll('.bundle-card__input');
+          var anyChecked = Array.from(radios).some(function (r) { return r.checked; });
+          row.classList.toggle('is-active', anyChecked);
+          row.querySelectorAll('[data-bundle-color]').forEach(function (s) {
+            s.disabled = !anyChecked;
+          });
+        });
+      }
+
+      function activateGrouped(row, preferredValue) {
+        var radios = row.querySelectorAll('.bundle-card__input');
+        var target = preferredValue ? findRadioByValue(row, preferredValue) : null;
+        if (!target) {
+          target = Array.from(radios).find(function (r) { return !r.classList.contains('disabled'); }) || radios[0];
+        }
+        if (target && !target.checked) {
+          target.checked = true;
+          target.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+      }
+
+      root.addEventListener('change', function (e) {
+        if (e.target.matches('.bundle-card__input')) {
+          sync();
+        } else if (e.target.matches('[data-grouped-color-select]')) {
+          var row = e.target.closest('[data-bundle-row]');
+          activateGrouped(row, e.target.value);
+        }
+      });
+
+      root.addEventListener('click', function (e) {
+        var card = e.target.closest('[data-bundle-grouped-card]');
+        if (!card) return;
+        var row = card.closest('[data-bundle-row]');
+        var select = row.querySelector('[data-grouped-color-select]');
+        activateGrouped(row, select ? select.value : null);
+      });
+
+      root.addEventListener('keydown', function (e) {
+        if (e.key !== 'Enter' && e.key !== ' ') return;
+        var card = e.target.closest('[data-bundle-grouped-card]');
+        if (!card) return;
+        e.preventDefault();
+        var row = card.closest('[data-bundle-row]');
+        var select = row.querySelector('[data-grouped-color-select]');
+        activateGrouped(row, select ? select.value : null);
+      });
+
+      sync();
+    });
+  })();
+</script>

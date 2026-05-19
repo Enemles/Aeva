@@ -234,13 +234,14 @@ variant-selects {
   border-color: rgba(var(--color-foreground), 0.35);
 }
 
-.bundle-card__input:checked + .bundle-card {
+.bundle-card-row.is-active .bundle-card {
   border-color: rgb(var(--color-button));
   background: rgba(var(--color-button), 0.06);
   box-shadow: 0 0 0 1px rgb(var(--color-button)) inset;
 }
 
-.bundle-card__input:focus-visible + .bundle-card {
+.bundle-card__input:focus-visible + .bundle-card,
+.bundle-card[role='button']:focus-visible {
   outline: 2px solid rgb(var(--color-button));
   outline-offset: 2px;
 }
@@ -384,5 +385,88 @@ variant-selects {
 
   .bundle-card__price {
     font-size: 1.5rem;
+  }
+}
+
+/* Color selectors per card (line item properties) */
+.bundle-card-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.bundle-card__colors {
+  display: none;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0.8rem 1.4rem 1.2rem 1.4rem;
+  margin-top: -0.4rem;
+  background: rgba(var(--color-button), 0.04);
+  border: 2px solid rgb(var(--color-button));
+  border-top: 0;
+  border-radius: 0 0 1.2rem 1.2rem;
+  position: relative;
+  top: -0.8rem;
+}
+
+.bundle-card-row.is-active .bundle-card__colors {
+  display: flex;
+}
+
+.bundle-card-row.is-active .bundle-card {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.bundle-card__color-row {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bundle-card__color-label {
+  font-family: var(--font-body-family);
+  font-size: 1.25rem;
+  color: rgba(var(--color-foreground), 0.75);
+}
+
+.bundle-card__color-select {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  font-family: var(--font-body-family);
+  font-size: 1.35rem;
+  color: rgb(var(--color-foreground));
+  background: rgb(var(--color-background));
+  border: 1px solid rgba(var(--color-foreground), 0.25);
+  border-radius: 0.6rem;
+  cursor: pointer;
+  transition: border-color var(--duration-short) ease;
+}
+
+.bundle-card__color-select:hover,
+.bundle-card__color-select:focus {
+  border-color: rgb(var(--color-button));
+  outline: none;
+}
+
+.bundle-card__color-select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media screen and (max-width: 749px) {
+  .bundle-card__color-row {
+    grid-template-columns: 6.5rem 1fr;
+    gap: 0.8rem;
+  }
+
+  .bundle-card__color-label {
+    font-size: 1.15rem;
+  }
+
+  .bundle-card__color-select {
+    font-size: 1.3rem;
+    padding: 0.6rem 0.9rem;
   }
 }
