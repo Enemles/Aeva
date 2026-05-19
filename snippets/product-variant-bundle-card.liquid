@@ -89,7 +89,8 @@
         {%- endif -%}
 
         {%- assign card_image = group_first_variant.featured_media | default: product.featured_media -%}
-        {%- assign card_size_str = pack_sizes_raw[card_index | minus: 1] | default: '1' -%}
+        {%- assign size_idx = card_index | minus: 1 -%}
+        {%- assign card_size_str = pack_sizes_raw[size_idx] | default: '1' -%}
         {%- assign card_size = card_size_str | strip | times: 1 -%}
 
         <div
@@ -215,7 +216,8 @@
       {%- endif -%}
 
       {%- assign card_image = matching_variant.featured_media | default: product.featured_media -%}
-      {%- assign card_size_str = pack_sizes_raw[card_index | minus: 1] | default: '1' -%}
+      {%- assign size_idx = card_index | minus: 1 -%}
+      {%- assign card_size_str = pack_sizes_raw[size_idx] | default: '1' -%}
       {%- assign card_size = card_size_str | strip | times: 1 -%}
 
       {%- capture input_id -%}{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}{%- endcapture -%}
