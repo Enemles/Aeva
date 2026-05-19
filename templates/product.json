@@ -42,7 +42,11 @@
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "button",
+            "picker_type": "bundle_card",
+            "bundle_subtext_default": "Livraison offerte",
+            "bundle_popular_position": 2,
+            "bundle_popular_label": "Le + populaire",
+            "bundle_show_multiplier": true,
             "swatch_shape": "circle"
           }
         },
