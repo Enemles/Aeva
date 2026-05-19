@@ -182,3 +182,207 @@ variant-selects {
 .product-form__input--pill input[type='radio'].disabled + label .variant-pill__savings {
   opacity: 0.5;
 }
+
+/* ============================================================
+   Bundle card variant picker
+   ============================================================ */
+
+.product-form__input--bundle-card {
+  border: 0;
+  padding: 0;
+  margin: 0 0 1.6rem;
+}
+
+.product-form__input--bundle-card .form__label {
+  margin-bottom: 0.8rem;
+}
+
+.bundle-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.bundle-card__input {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.bundle-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 6.4rem 1fr auto;
+  align-items: center;
+  gap: 1.4rem;
+  padding: 1.2rem 1.4rem;
+  border: 2px solid rgba(var(--color-foreground), 0.12);
+  border-radius: 1.2rem;
+  background: rgb(var(--color-background));
+  cursor: pointer;
+  transition: border-color var(--duration-short) ease, box-shadow var(--duration-short) ease,
+    background-color var(--duration-short) ease;
+}
+
+.bundle-card:hover {
+  border-color: rgba(var(--color-foreground), 0.35);
+}
+
+.bundle-card__input:checked + .bundle-card {
+  border-color: rgb(var(--color-button));
+  background: rgba(var(--color-button), 0.06);
+  box-shadow: 0 0 0 1px rgb(var(--color-button)) inset;
+}
+
+.bundle-card__input:focus-visible + .bundle-card {
+  outline: 2px solid rgb(var(--color-button));
+  outline-offset: 2px;
+}
+
+.bundle-card__input:disabled + .bundle-card,
+.bundle-card__input.disabled + .bundle-card {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.bundle-card__input:disabled + .bundle-card .bundle-card__title,
+.bundle-card__input.disabled + .bundle-card .bundle-card__title {
+  text-decoration: line-through;
+}
+
+.bundle-card--popular {
+  border-color: rgba(var(--color-button), 0.5);
+}
+
+.bundle-card__flag {
+  position: absolute;
+  top: -1rem;
+  left: 1.2rem;
+  background: rgb(var(--color-button));
+  color: rgb(var(--color-button-text));
+  font-family: var(--font-heading-family);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.bundle-card__media {
+  position: relative;
+  width: 6.4rem;
+  height: 6.4rem;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  background: rgba(var(--color-foreground), 0.05);
+  flex-shrink: 0;
+}
+
+.bundle-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.bundle-card__img--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem;
+}
+
+.bundle-card__multiplier {
+  position: absolute;
+  bottom: 0.4rem;
+  left: 0.4rem;
+  background: rgb(var(--color-foreground));
+  color: rgb(var(--color-background));
+  font-family: var(--font-heading-family);
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  line-height: 1.2;
+}
+
+.bundle-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.bundle-card__title {
+  font-family: var(--font-heading-family);
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: rgb(var(--color-foreground));
+  line-height: 1.2;
+}
+
+.bundle-card__subtext {
+  font-family: var(--font-body-family);
+  font-size: 1.2rem;
+  color: rgba(var(--color-foreground), 0.7);
+  line-height: 1.3;
+}
+
+.bundle-card__input:checked + .bundle-card .bundle-card__subtext {
+  color: rgb(var(--color-button));
+  font-weight: 600;
+}
+
+.bundle-card__pricing {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.1rem;
+  text-align: right;
+}
+
+.bundle-card__price {
+  font-family: var(--font-heading-family);
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: rgb(var(--color-foreground));
+  line-height: 1.2;
+}
+
+.bundle-card__compare {
+  font-family: var(--font-body-family);
+  font-size: 1.2rem;
+  color: rgba(var(--color-foreground), 0.55);
+  text-decoration: line-through;
+  line-height: 1.2;
+}
+
+@media screen and (max-width: 749px) {
+  .bundle-card {
+    grid-template-columns: 5.2rem 1fr auto;
+    gap: 1rem;
+    padding: 1rem 1.2rem;
+  }
+
+  .bundle-card__media {
+    width: 5.2rem;
+    height: 5.2rem;
+  }
+
+  .bundle-card__title {
+    font-size: 1.4rem;
+  }
+
+  .bundle-card__price {
+    font-size: 1.5rem;
+  }
+}

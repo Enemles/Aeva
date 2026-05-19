@@ -879,10 +879,51 @@
             {
               "value": "button",
               "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.options__2.label"
+            },
+            {
+              "value": "bundle_card",
+              "label": "Card bundle (image + prix)"
             }
           ],
           "default": "button",
           "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.label"
+        },
+        {
+          "type": "header",
+          "content": "Card bundle"
+        },
+        {
+          "type": "paragraph",
+          "content": "Réglages utilisés uniquement quand le type est « Card bundle »."
+        },
+        {
+          "type": "text",
+          "id": "bundle_subtext_default",
+          "label": "Sous-texte par défaut",
+          "info": "Affiché sous le titre quand le variant n'a pas de remise. Ex. : Livraison offerte",
+          "default": "Livraison offerte"
+        },
+        {
+          "type": "range",
+          "id": "bundle_popular_position",
+          "label": "Position du badge « populaire »",
+          "info": "Position (1 = premier variant, 2 = second…). 0 pour désactiver.",
+          "min": 0,
+          "max": 6,
+          "step": 1,
+          "default": 2
+        },
+        {
+          "type": "text",
+          "id": "bundle_popular_label",
+          "label": "Texte du badge populaire",
+          "default": "Le + populaire"
+        },
+        {
+          "type": "checkbox",
+          "id": "bundle_show_multiplier",
+          "label": "Afficher le multiplicateur (x2, x3…)",
+          "default": true
         },
         {
           "id": "swatch_shape",

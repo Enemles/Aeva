@@ -1,0 +1,135 @@
+{% comment %}
+  Renders bundle-style variant cards (image + title + subtext + price + compare price).
+
+  Accepts:
+  - product: {Object} product object
+  - option: {Object} current product_option object
+  - block: {Object} block object (bundle_* settings live here)
+  - product_form_id: {String} id of the associated product form
+
+  Usage:
+  {% render 'product-variant-bundle-card',
+    product: product,
+    option: option,
+    block: block,
+    product_form_id: product_form_id
+  %}
+{% endcomment %}
+
+{%- liquid
+  assign popular_position = block.settings.bundle_popular_position | default: 0
+  assign popular_label = block.settings.bundle_popular_label
+  assign subtext_default = block.settings.bundle_subtext_default
+  assign show_multiplier = block.settings.bundle_show_multiplier
+-%}
+
+<div class="bundle-cards" role="presentation">
+  {%- for value in option.values -%}
+    {%- liquid
+      if option.position == 1
+        assign matching_variant = product.variants | where: 'option1', value | first
+      elsif option.position == 2
+        assign matching_variant = product.variants | where: 'option2', value | first
+      else
+        assign matching_variant = product.variants | where: 'option3', value | first
+      endif
+
+      assign option_disabled = true
+      if value.available
+        assign option_disabled = false
+      endif
+
+      assign discount_pct = 0
+      if matching_variant.compare_at_price > matching_variant.price
+        assign discount_amount = matching_variant.compare_at_price | minus: matching_variant.price
+        assign discount_pct = discount_amount | times: 100.0 | divided_by: matching_variant.compare_at_price | round
+      endif
+
+      assign subtext = subtext_default
+      if discount_pct > 0
+        assign subtext = 'Économisez ' | append: discount_pct | append: '%'
+      endif
+
+      assign is_popular = false
+      if popular_position > 0 and forloop.index == popular_position
+        assign is_popular = true
+      endif
+
+      assign card_image = matching_variant.featured_media
+      if card_image == blank
+        assign card_image = product.featured_media
+      endif
+
+      assign multiplier = forloop.index
+    -%}
+
+    {%- capture input_id -%}
+      {{ section.id }}-{{ option.position }}-{{ forloop.index0 }}
+    {%- endcapture -%}
+
+    {%- capture input_name -%}
+      {{ option.name }}-{{ option.position }}
+    {%- endcapture -%}
+
+    {%- assign escaped_value = value | escape -%}
+
+    <input
+      type="radio"
+      class="bundle-card__input{% if option_disabled %} disabled{% endif %}"
+      id="{{ input_id }}"
+      name="{{ input_name | escape }}"
+      value="{{ escaped_value }}"
+      form="{{ product_form_id }}"
+      data-product-url="{{ value.product_url }}"
+      data-option-value-id="{{ value.id }}"
+      {% if value.selected %}
+        checked
+      {% endif %}
+    >
+    <label class="bundle-card{% if is_popular %} bundle-card--popular{% endif %}" for="{{ input_id }}">
+      {%- if is_popular and popular_label != blank -%}
+        <span class="bundle-card__flag">{{ popular_label }}</span>
+      {%- endif -%}
+
+      <div class="bundle-card__media">
+        {%- if card_image -%}
+          {{
+            card_image
+            | image_url: width: 200
+            | image_tag:
+              loading: 'lazy',
+              width: card_image.width,
+              height: card_image.height,
+              class: 'bundle-card__img',
+              alt: card_image.alt | default: product.title | escape
+          }}
+        {%- else -%}
+          <div class="bundle-card__img bundle-card__img--placeholder">
+            {{ 'product-1' | placeholder_svg_tag }}
+          </div>
+        {%- endif -%}
+        {%- if show_multiplier and multiplier > 1 -%}
+          <span class="bundle-card__multiplier" aria-hidden="true">x{{ multiplier }}</span>
+        {%- endif -%}
+      </div>
+
+      <div class="bundle-card__body">
+        <span class="bundle-card__title">{{ value }}</span>
+        {%- if subtext != blank -%}
+          <span class="bundle-card__subtext">{{ subtext }}</span>
+        {%- endif -%}
+      </div>
+
+      <div class="bundle-card__pricing">
+        <span class="bundle-card__price">{{ matching_variant.price | money }}</span>
+        {%- if matching_variant.compare_at_price > matching_variant.price -%}
+          <span class="bundle-card__compare">{{ matching_variant.compare_at_price | money }}</span>
+        {%- endif -%}
+      </div>
+
+      <span class="visually-hidden label-unavailable">
+        {{- 'products.product.variant_sold_out_or_unavailable' | t -}}
+      </span>
+    </label>
+  {%- endfor -%}
+</div>

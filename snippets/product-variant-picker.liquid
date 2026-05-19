@@ -42,6 +42,16 @@
             picker_type: picker_type
           %}
         </fieldset>
+      {%- elsif picker_type == 'bundle_card' -%}
+        <fieldset class="js product-form__input product-form__input--bundle-card">
+          <legend class="form__label">{{ option.name }}</legend>
+          {% render 'product-variant-bundle-card',
+            product: product,
+            option: option,
+            block: block,
+            product_form_id: product_form_id
+          %}
+        </fieldset>
       {%- elsif picker_type == 'button' -%}
         <fieldset class="js product-form__input product-form__input--pill">
           <legend class="form__label">{{ option.name }}</legend>
